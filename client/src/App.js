@@ -4,26 +4,32 @@ import React from "react";
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
 // We import all the components we need in our app
-import Navbar from "./components/navbar";
-import Edit from "./components/edit";
 import Rewards from "./components/rewards";
+import Redemption from "./components/redemption";
+import Payment from "./components/payment";
+import Payment_outcome from "./components/payment_outcome";
+import Beneficiary from "./components/beneficiary";
 import Home from "./components/home";
 
 const App = () => {
   return (
-    <Rewards/>
 
     // this portion is to allow the app to route to specific paths
-    // <BrowserRouter>
-    //   {/* <Route exact path="/">
-    //     <Redirect to='/home'/>
-    //   </Route> */}
+    <BrowserRouter>
+      <Route exact path="/">
+        <Redirect to='/home'/>
+      </Route>
 
-    //   {/* set the path to which link u want to route to, the component is the function in its respective js file */}
-    //   <Route path='/rewards' component={Rewards}/>
+      {/* set the path to which link u want to route to, the component is the function in its respective js file */}
+      {/* <Route path='/redemption' component={Redemption}/> */}
+      
+      <Route path='/rewards' component={Rewards}/>
+      <Route path='/payment' component={Payment}/>
+      <Route path='/payment_outcome' component={Payment_outcome}/>
+      <Route path='/beneficiary' component={Beneficiary}/>
 
-    //   <Route path='/home' component={Home}/>
-    // </BrowserRouter>
+      <Route path='/home' component={Home}/>
+    </BrowserRouter>
 
     
   );

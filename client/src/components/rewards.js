@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MDBBtn, MDBContainer, MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBRow, MDBCol, MDBCardSubTitle } from 'mdb-react-ui-kit';
+import { MDBModal,
+    MDBModalDialog,
+    MDBModalContent,
+    MDBModalHeader,
+    MDBModalTitle,
+    MDBModalBody,
+    MDBModalFooter,
+} from 'mdb-react-ui-kit';
 import { useHistory } from 'react-router-dom';
 
 
 function Rewards() {
     const history = useHistory();
+
+    // Used for Modal
+    const [centredModal, setCentredModal] = useState(false);
+    const toggleShow = () => setCentredModal(!centredModal);
 
     return (
     
@@ -19,15 +31,15 @@ function Rewards() {
         className= 'px-4 d-flex align-items-baseline justify-content-center'
     >
         
-        // {/* Rewards section */}
+        {/* Rewards section */}
         <div className='py-4'>
             <div>
-                <h5 className='mb-3 py-4'>
+                <h2 className='mb-3 py-4'>
                 <b>Rewards</b>
-                </h5>
+                </h2>
                 <MDBCol>
                 <MDBRow sm='4' style={{marginBottom: '10px', maxWidth: '22rem'}}>
-                    <MDBCard onClick={() => history.push('/redemption')}>
+                    <MDBCard onClick={toggleShow}>
                     <MDBCardImage src='https://images.deliveryhero.io/image/fd-th/LH/w7wn-hero.jpg' position='top' alt='...' />
                     <MDBCardBody className='text-center'>
                         <MDBCardTitle style={{ paddingTop: '5px'}}>$2 off Koi</MDBCardTitle>
@@ -78,6 +90,28 @@ function Rewards() {
                 </MDBRow>
                 
                 </MDBCol>
+
+                <MDBModal tabIndex='-1' show={centredModal} getOpenState={(e: any) => setCentredModal(e)} >
+                    <MDBModalDialog centered size="sm">
+                        <MDBModalContent>
+                        <MDBModalHeader>
+                            <MDBModalTitle>Get this Reward!</MDBModalTitle>
+                            <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
+                        </MDBModalHeader>
+                        <MDBModalBody>
+                            <p>
+                            Redeem with 2,000 points?
+                            </p>
+                        </MDBModalBody>
+                        <MDBModalFooter centered>
+                            <MDBBtn color='white' onClick={toggleShow}>
+                            Cancel
+                            </MDBBtn>
+                            <MDBBtn color='success'>Redeem</MDBBtn>
+                        </MDBModalFooter>
+                        </MDBModalContent>
+                    </MDBModalDialog>
+                </MDBModal>
             </div>
         </div>
 
