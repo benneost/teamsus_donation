@@ -21,7 +21,7 @@ function Home() {
         </h5>
         <MDBBtn
             tag='a'
-            href='/beneficiaries'
+            href='/beneficiary'
             // target='_blank'
             role='button'
             style={{margin: 10}}

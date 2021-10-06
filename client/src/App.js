@@ -8,6 +8,7 @@ import Rewards from "./components/rewards";
 import Redemption from "./components/redemption";
 import Payment from "./components/payment";
 import Payment_outcome from "./components/payment_outcome";
+import Beneficiary from "./components/beneficiary";
 import Home from "./components/home";
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
       <Route path='/rewards' component={Rewards}/>
       <Route path='/payment' component={Payment}/>
       <Route path='/payment_outcome' component={Payment_outcome}/>
+      <Route path='/beneficiary' component={Beneficiary}/>
 
       <Route path='/home' component={Home}/>
     </BrowserRouter>
