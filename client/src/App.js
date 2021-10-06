@@ -7,23 +7,24 @@ import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import Navbar from "./components/navbar";
 import Edit from "./components/edit";
 import Rewards from "./components/rewards";
+import Redemption from "./components/redemption";
 import Home from "./components/home";
 
 const App = () => {
   return (
-    <Rewards/>
+    
 
     // this portion is to allow the app to route to specific paths
-    // <BrowserRouter>
-    //   {/* <Route exact path="/">
-    //     <Redirect to='/home'/>
-    //   </Route> */}
+    <BrowserRouter>
+      <Route exact path="/">
+        <Redirect to='/rewards'/>
+      </Route>
 
-    //   {/* set the path to which link u want to route to, the component is the function in its respective js file */}
-    //   <Route path='/rewards' component={Rewards}/>
+      {/* set the path to which link u want to route to, the component is the function in its respective js file */}
+      <Route path='/redemption' component={Redemption}/>
 
-    //   <Route path='/home' component={Home}/>
-    // </BrowserRouter>
+      <Route path='/rewards' component={Rewards}/>
+    </BrowserRouter>
 
     
   );
