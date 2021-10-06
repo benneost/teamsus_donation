@@ -39,12 +39,12 @@ function Home() {
         </MDBBtn>
         <MDBBtn
             tag='a'
-            href='/donation'
+            href='/payment'
             // target='_blank'
             role='button'
             style={{margin: 10}}
         >
-            Donation
+            Payment
         </MDBBtn>
         </div>
     </div>
