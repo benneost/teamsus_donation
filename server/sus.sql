@@ -1,6 +1,6 @@
-DROP SCHEMA IF EXISTS team_sus;
-create schema team_sus;
-use team_sus;
+DROP SCHEMA IF EXISTS teamsus;
+create schema teamsus;
+use teamsus;
 
 -- create table user
 DROP TABLE IF EXISTS `user`;
@@ -64,6 +64,18 @@ CREATE TABLE merchant (
 
 );
 
+insert into `merchant` values
+  (1, 'gongcha'),
+  (2, 'each a cup'),
+  (3, 'starbucks'),
+  (4, 'mr coconut'),
+  (5, 'boost'),
+  (6, 'itea'),
+  (7, 'liho'),
+  (8, 'koi'),
+  (9, 'chi cha')
+  ;
+
 -- create table reward
 DROP TABLE IF EXISTS `reward`;
 
@@ -104,8 +116,8 @@ CREATE TABLE redemptions (
   
   PRIMARY KEY (`redemptionid`),
   KEY `redemptionFK1` (`rewardid`),
-  CONSTRAINT `redemptionFK1` FOREIGN KEY (`rewardid`) REFERENCES `reward` (`rewardid`) ON DELETE CASCADE
   KEY `redemptionFK2` (`userid`),
+  CONSTRAINT `redemptionFK1` FOREIGN KEY (`rewardid`) REFERENCES `reward` (`rewardid`) ON DELETE CASCADE,
   CONSTRAINT `redemptionFK2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE
 
 );
