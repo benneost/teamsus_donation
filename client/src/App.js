@@ -12,18 +12,19 @@ import Home from "./components/home";
 
 const App = () => {
   return (
-    
 
     // this portion is to allow the app to route to specific paths
     <BrowserRouter>
       <Route exact path="/">
-        <Redirect to='/rewards'/>
+        <Redirect to='/home'/>
       </Route>
 
       {/* set the path to which link u want to route to, the component is the function in its respective js file */}
-      <Route path='/redemption' component={Redemption}/>
-
+      {/* <Route path='/redemption' component={Redemption}/> */}
+      
       <Route path='/rewards' component={Rewards}/>
+
+      <Route path='/home' component={Home}/>
     </BrowserRouter>
 
     

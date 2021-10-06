@@ -1,43 +1,50 @@
-import React from "react";
- 
-// We import bootstrap to make our application look better.
-import "bootstrap/dist/css/bootstrap.css";
- 
-// We import NavLink to utilize the react router.
-import { NavLink } from "react-router-dom";
- 
-// Here, we display our Navbar
-const Navbar = () => {
+import React, { useState } from 'react';
+import {
+  MDBNavbar,
+  MDBContainer,
+  MDBNavbarBrand,
+  MDBNavbarToggler,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBCollapse,
+  MDBBtn,
+  MDBIcon,
+  MDBNavbarNav,
+} from 'mdb-react-ui-kit';
+
+export default function Navbar() {
+  const [showNavNoTogglerSecond, setShowNavNoTogglerSecond] = useState(false);
+
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink className="navbar-brand" to="/">
-          MongoDB
-        </NavLink>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+    <MDBNavbar expand='lg' fixed='top' light bgColor='light'>
+      <MDBContainer fluid>
+        <MDBNavbarBrand href='/home' style={{height:'3.5rem', marginRight:'1rem'}} className="px-4">Elearn</MDBNavbarBrand>
+        <MDBNavbarToggler
+          type='button'
+          data-target='#navbarTogglerDemo02'
+          aria-controls='navbarTogglerDemo02'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+          onClick={() => setShowNavNoTogglerSecond(!showNavNoTogglerSecond)}
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
- 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/create">
-                Create Record
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+          <MDBIcon icon='bars' fas />
+        </MDBNavbarToggler>
+        <MDBCollapse navbar show={showNavNoTogglerSecond} className="px-4">
+          <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
+            <MDBNavbarItem>
+              <MDBNavbarLink active href='/learnercourse'>
+                Course
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink active href='/learnerforum'>
+                Forum
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+          </MDBNavbarNav>
+          <span className='navbar-text'>Benjamin</span>
+        </MDBCollapse>
+      </MDBContainer>
+    </MDBNavbar>
   );
-};
- 
-export default Navbar;
+}
