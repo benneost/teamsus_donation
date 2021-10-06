@@ -31,12 +31,12 @@ function Rewards() {
         className= 'px-4 d-flex align-items-baseline justify-content-center'
     >
         
-        // {/* Rewards section */}
+        {/* Rewards section */}
         <div className='py-4'>
             <div>
-                <h5 className='mb-3 py-4'>
+                <h2 className='mb-3 py-4'>
                 <b>Rewards</b>
-                </h5>
+                </h2>
                 <MDBCol>
                 <MDBRow sm='4' style={{marginBottom: '10px', maxWidth: '22rem'}}>
                     <MDBCard onClick={toggleShow}>
