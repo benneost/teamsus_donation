@@ -4,202 +4,170 @@ import { useHistory } from 'react-router-dom';
 
 import "bootstrap/dist/css/bootstrap.css";
 
-function beneficary(){
+function beneficiary(){
     return (
-    
-        <MDBContainer fluid>
-        <title>Beneficiary List</title>
-        {/* this is the navbar thats imported from the respective navbar js*/}
-        {/* <LearnerNavbar/> */}
-    
-        {/* can edit whatever u want here */}
+        <MDBContainer>
+            <MDBRow>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-        <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-        <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-        <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+                <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                    <MDBCard style={{ maxWidth: '22rem' }}>
+                        <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                        <MDBCardBody>
+                            <MDBCardTitle>Beneficiary Name</MDBCardTitle>
+                            <MDBCardText>
+                            Insert text on beneficiary information, cause, impact, amount of donations made etc.
+                            </MDBCardText>
+                            <MDBBtn href='#'>Find Out More</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
 
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6">
-                <div class="beneficiary" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-
+            </MDBRow>
         </MDBContainer>
         );
 }
+
+export default beneficiary;
