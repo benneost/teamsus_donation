@@ -56,7 +56,27 @@ userRoutes.route('/add')
             }
         );
 
-        // const userid = req.body.userid;
+        
+    });
+
+
+module.exports = userRoutes;
+
+
+
+// (username, '2020-12-11', gender, occupation, age, email, phone, password, 0)
+// const userid = req.body.userid
+//         req.body.username,
+//         req.body.joindate,
+//         req.body.gender,
+//         req.body.occupation,
+//         req.body.age,
+//         req.body.email,
+//         req.body.phonenum,
+//         req.body.password,
+//         req.body.points
+
+// const userid = req.body.userid;
         // const username = req.body.username;
         // const joindate= req.body.joindate;
         // const gender = req.body.gender;
@@ -73,35 +93,33 @@ userRoutes.route('/add')
         //     'phonenum': phonenum
 
         // })
-    });
-
-// TEST
-userRoutes.route('/test')
-.get(function(req, res, next) {
-    const userid = req.query.userid;
-    
-
-    connection.query(
-        "SELECT * FROM `user` WHERE userId = ? LIMIT 3", userid,
-        function(error, results, fields) {
-        if (error) throw error;
-        res.json(results);
-        }
-    );
-});
-
-module.exports = userRoutes;
-
-// (username, '2020-12-11', gender, occupation, age, email, phone, password, 0)
-// const userid = req.body.userid
-//         req.body.username,
-//         req.body.joindate,
-//         req.body.gender,
-//         req.body.occupation,
-//         req.body.age,
-//         req.body.email,
-//         req.body.phonenum,
-//         req.body.password,
-//         req.body.points
 
 // ?:userid&:username&:joindate&:gender&:occupation&:age&:email&:phonenum&:password&:points
+
+// This section will help you update a user by id.
+// userRoutes.route('/update/')
+//     .put(function(req, res) {
+//         let sql = `UPDATE user VALUES (?)`;
+//         let values = [
+//             req.body.username,
+//             req.body.gender,
+//             req.body.occupation,
+//             req.body.age,
+//             req.body.email,
+//             req.body.phonenum,
+//             req.body.password,
+//         ];  
+
+//         connection.query( 
+//             sql, [values],
+            
+//             function(error, results) {
+//                 if (error) throw error;
+//                 res.json({
+//                     status: 200,
+//                     message: "Updated user successfully"
+//                 })  
+//             }
+//         );
+//     });
+

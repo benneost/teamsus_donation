@@ -7,10 +7,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Add var routes to this section
-var user = require("./routes/users.js");
+const user = require("./routes/users.js");
+const beneficiary = require("./routes/beneficiary.js");
 
 // Add routes to this section
 app.use('/user', user);
+app.use('/beneficiary', beneficiary);
 
 
 // Test if server is working
