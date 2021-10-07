@@ -11,6 +11,16 @@ import Payment_outcome from "./components/payment_outcome";
 import Beneficiary from "./components/beneficiary";
 import Home from "./components/home";
 
+// To connect to our db
+// require('dotenv').config()
+
+// const express = require('express');
+// const app = express();
+// const bodyParser = require('body-parser');
+// const connection = require('../../server/database');
+
+// Start here
+
 const App = () => {
   return (
 

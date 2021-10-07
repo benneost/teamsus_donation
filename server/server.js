@@ -1,19 +1,35 @@
-const express = require("express");
+require('dotenv').config()
+const express = require('express');
 const app = express();
-const cors = require("cors");
-require("dotenv").config({ path: "./config.env" });
-const port = process.env.PORT || 5000;
-app.use(cors());
-app.use(express.json());
+const bodyParser = require('body-parser');
+const connection = require('./db');
 
-app.use(require("./routes/records.js"));
-// get driver connection
-const dbo = require("./db/conn");
+// Add var routes to this section
+var user = require("./routes/users.js");
 
-app.listen(port, () => {
-// perform a database connection when server starts
-    dbo.connectToServer(function (err) {
-        if (err) console.error(err);
-    });
-    console.log(`Server is running on port: ${port}`);
-});
+// Add routes to this section
+app.use('/user', user);
+
+
+// Test if server is working
+app.get('/status', (req, res) => res.send('Working!'));
+
+// Port 8080 for Google App Engine
+app.set('port', process.env.PORT || 3000);
+app.listen(3000);
+
+
+
+
+
+
+// app.route('/user/:userId')
+//     .get(function(req, res, next) {
+//         connection.query(
+//             "SELECT * FROM `user` WHERE userId = ? LIMIT 3", req.params.userId,
+//             function(error, results, fields) {
+//             if (error) throw error;
+//             res.json(results);
+//             }
+//         );
+//     });
