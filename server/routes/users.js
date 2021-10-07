@@ -31,21 +31,19 @@ userRoutes.route('/:userId')
     });
 
 // This section will help you create a new user
-userRoutes.route('/add?:userid&:username&:joindate&:gender&:occupation&:age&:email&:phonenum&:password&:points')
+userRoutes.route('/add')
     .post(function(req, res) {
-        let sql = `INSERT INTO user(userid, username, joindate, gender, occupation, age, email, phonenum, password, points) VALUES (?)`;
+        let sql = `INSERT INTO user(username, gender, occupation, age, email, phonenum, password) VALUES (?)`;
         let values = [
-            req.body.userid,
             req.body.username,
-            req.body.joindate,
             req.body.gender,
             req.body.occupation,
             req.body.age,
             req.body.email,
             req.body.phonenum,
             req.body.password,
-            req.body.points
-            ];
+        ];  
+
         connection.query( 
             sql, [values],
             
@@ -57,9 +55,53 @@ userRoutes.route('/add?:userid&:username&:joindate&:gender&:occupation&:age&:ema
                 })  
             }
         );
+
+        // const userid = req.body.userid;
+        // const username = req.body.username;
+        // const joindate= req.body.joindate;
+        // const gender = req.body.gender;
+        // const occupation = req.body.occupation;
+        // const age = req.body.age;
+        // const email = req.body.email;
+        // const phonenum = req.body.phonenum;
+        // const password = req.body.password;
+        // const points = req.body.points;
+
+        // res.send({
+        //     'userid': userid,
+        //     'joindate': joindate,
+        //     'phonenum': phonenum
+
+        // })
     });
 
+// TEST
+userRoutes.route('/test')
+.get(function(req, res, next) {
+    const userid = req.query.userid;
+    
+
+    connection.query(
+        "SELECT * FROM `user` WHERE userId = ? LIMIT 3", userid,
+        function(error, results, fields) {
+        if (error) throw error;
+        res.json(results);
+        }
+    );
+});
 
 module.exports = userRoutes;
 
 // (username, '2020-12-11', gender, occupation, age, email, phone, password, 0)
+// const userid = req.body.userid
+//         req.body.username,
+//         req.body.joindate,
+//         req.body.gender,
+//         req.body.occupation,
+//         req.body.age,
+//         req.body.email,
+//         req.body.phonenum,
+//         req.body.password,
+//         req.body.points
+
+// ?:userid&:username&:joindate&:gender&:occupation&:age&:email&:phonenum&:password&:points

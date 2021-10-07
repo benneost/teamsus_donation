@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE user (
   
-  `userid` int(20) not null,
+  `userid` int(20) not null AUTO_INCREMENT,
   `username` char(20) not null,
   `joindate` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `gender` char(1) not null,
@@ -16,11 +16,11 @@ CREATE TABLE user (
   `email` varchar(50),
   `phonenum` int(8),
   `password` varchar(16),
-  `points` int(10),
+  `points` int(10) DEFAULT 0,
 
   PRIMARY KEY (`userid`)
  
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 insert into `user` values 
   (1,'gerald','2021-09-20', 'm', 'student', 21, 'gerald@gmail.com', 91234567, 'GVHB325$#', 250),
@@ -43,21 +43,21 @@ CREATE TABLE beneficiary (
   `beneficiaryid` int(11) NOT NULL AUTO_INCREMENT,
   `bname` varchar(150) NOT NULL,
   `cause` char(225) NOT NULL,
-  `amtdonated` int(10) NOT NULL,
-  `startdate` DATE NOT NULL,
+  `amtdonated` int(10) NOT NULL DEFAULT 0,
+  `startdate` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `description` varchar(200) NOT NULL,
   `url` varchar(100) NOT NULL,
 
   PRIMARY KEY (`beneficiaryid`)
   
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- create table merchant
 DROP TABLE IF EXISTS `merchant`;
 
 CREATE TABLE merchant (
 
-  `merchantid` int(20) not null,
+  `merchantid` int(20) not null AUTO_INCREMENT,
   `mname` varchar(100) not null,
   
   PRIMARY KEY (`merchantid`)
@@ -81,7 +81,7 @@ DROP TABLE IF EXISTS `reward`;
 
 CREATE TABLE reward (
 
-  `rewardid` int(20) not null,
+  `rewardid` int(20) not null AUTO_INCREMENT,
   `rname` varchar(100) not null,
   `description` varchar(225) not null,
   `pointsRequired` int(20) not null,
@@ -112,7 +112,7 @@ DROP TABLE IF EXISTS `redemptions`;
 
 CREATE TABLE redemptions (
 
-  `redemptionid` int(20) not null,
+  `redemptionid` int(20) not null AUTO_INCREMENT,
   `rewardid` int(20) not null,
   `userid` int(20) not null,
   
@@ -129,7 +129,7 @@ DROP TABLE IF EXISTS `donation`;
 
 CREATE TABLE donation (
 
-  `donationid` int(20) not null,
+  `donationid` int(20) not null AUTO_INCREMENT,
   `amount` float not null,
   `points` int(20) not null,
   `dateTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -149,8 +149,8 @@ DROP TABLE IF EXISTS `payment`;
 
 CREATE TABLE payment (
 
-  `paymentid` int(20) not null,
-  `status` varchar(20) not null,
+  `paymentid` int(20) not null AUTO_INCREMENT,
+  `status` varchar(20) not null DEFAULT 'successful',
   `amount` float not null,
   `dateTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `beneficiaryid` int(20) not null,

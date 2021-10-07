@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const connection = require('./db');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Add var routes to this section
 var user = require("./routes/users.js");
