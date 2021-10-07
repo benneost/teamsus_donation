@@ -1,26 +1,26 @@
-DROP SCHEMA IF EXISTS team_sus;
-create schema team_sus;
-use team_sus;
+DROP SCHEMA IF EXISTS teamsus;
+create schema teamsus;
+use teamsus;
 
 -- create table user
 DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE user (
   
-  `userid` int(20) not null,
+  `userid` int(20) not null AUTO_INCREMENT,
   `username` char(20) not null,
-  `joindate` date not null,
+  `joindate` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `gender` char(1) not null,
   `occupation` char(20) not null,
   `age` int(2) not null,
   `email` varchar(50),
   `phonenum` int(8),
   `password` varchar(16),
-  `points` int(10),
+  `points` int(10) DEFAULT 0,
 
   PRIMARY KEY (`userid`)
  
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 insert into `user` values 
   (1,'gerald','2021-09-20', 'm', 'student', 21, 'gerald@gmail.com', 91234567, 'GVHB325$#', 250),
@@ -43,50 +43,84 @@ CREATE TABLE beneficiary (
   `beneficiaryid` int(11) NOT NULL AUTO_INCREMENT,
   `bname` varchar(150) NOT NULL,
   `cause` char(225) NOT NULL,
-  `amtdonated` int(10) NOT NULL,
-  `startdate` DATE NOT NULL,
+  `amtdonated` int(10) NOT NULL DEFAULT 0,
+  `startdate` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `description` varchar(200) NOT NULL,
+  `url` varchar(100) NOT NULL,
 
   PRIMARY KEY (`beneficiaryid`)
   
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- create table merchant
+DROP TABLE IF EXISTS `merchant`;
+
+CREATE TABLE merchant (
+
+  `merchantid` int(20) not null AUTO_INCREMENT,
+  `mname` varchar(100) not null,
+  
+  PRIMARY KEY (`merchantid`)
+
+);
+
+insert into `merchant` values
+  (1, 'gongcha'),
+  (2, 'each a cup'),
+  (3, 'starbucks'),
+  (4, 'mr coconut'),
+  (5, 'boost'),
+  (6, 'itea'),
+  (7, 'liho'),
+  (8, 'koi'),
+  (9, 'chi cha')
+  ;
 
 -- create table reward
 DROP TABLE IF EXISTS `reward`;
 
 CREATE TABLE reward (
 
-  `rewardid` int(20) not null,
+  `rewardid` int(20) not null AUTO_INCREMENT,
   `rname` varchar(100) not null,
   `description` varchar(225) not null,
-  `points needed` int(20) not null,
-  `redemption cap` int(20) not null,
+  `pointsRequired` int(20) not null,
+  `redemptionCap` int(20) not null,
+  `expiryDate` DATE NOT NULL,
+  `merchantid` int(20) not null,
   
-  PRIMARY KEY (`rewardid`)
+  PRIMARY KEY (`rewardid`, `merchantid`),
+  KEY `rewardFK1` (`merchantid`),
+  CONSTRAINT `rewardFK1` FOREIGN KEY (`merchantid`) REFERENCES `merchant` (`merchantid`) ON DELETE CASCADE
 
 );
 
 insert into `reward` values
-  (1, 'gongcha', 'popular bubble tea drink', 400, 100),
-  (2, 'each a cup', 'popular bubble tea drink', 400, 200),
-  (3, 'starbucks', 'popular bubble tea drink', 400, 100),
-  (4, 'mr coconut', 'popular bubble tea drink', 400, 300),
-  (5, 'boost', 'popular bubble tea drink', 400, 150),
-  (6, 'itea', 'popular bubble tea drink', 400, 200),
-  (7, 'liho', 'popular bubble tea drink', 400, 200),
-  (8, 'koi', 'popular bubble tea drink', 400, 400),
-  (9, 'chi cha', 'popular bubble tea drink', 400, 350)
+  (1, 'gongcha', 'popular bubble tea drink', 400, 100, '2020-12-11', 1),
+  (2, 'each a cup', 'popular bubble tea drink', 400, 200, '2020-12-11', 2),
+  (3, 'starbucks', 'popular bubble tea drink', 400, 100, '2020-12-11', 3),
+  (4, 'mr coconut', 'popular bubble tea drink', 400, 300, '2020-12-11', 4),
+  (5, 'boost', 'popular bubble tea drink', 400, 150, '2020-12-11', 5),
+  (6, 'itea', 'popular bubble tea drink', 400, 200, '2020-12-11', 6),
+  (7, 'liho', 'popular bubble tea drink', 400, 200, '2020-12-11', 7),
+  (8, 'koi', 'popular bubble tea drink', 400, 400, '2020-12-11', 8),
+  (9, 'chi cha', 'popular bubble tea drink', 400, 350, '2020-12-11', 9)
   ;
 
 -- create table redemptions
+DROP TABLE IF EXISTS `redemptions`;
+
 CREATE TABLE redemptions (
 
-  `redemptionid` int(20) not null,
+  `redemptionid` int(20) not null AUTO_INCREMENT,
   `rewardid` int(20) not null,
   `userid` int(20) not null,
   
   PRIMARY KEY (`redemptionid`),
-  KEY `rewardFK1` (`userid`),
-  CONSTRAINT `rewardFK1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE
+  KEY `redemptionFK1` (`rewardid`),
+  KEY `redemptionFK2` (`userid`),
+  CONSTRAINT `redemptionFK1` FOREIGN KEY (`rewardid`) REFERENCES `reward` (`rewardid`) ON DELETE CASCADE,
+  CONSTRAINT `redemptionFK2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE
 
 );
 
@@ -95,16 +129,40 @@ DROP TABLE IF EXISTS `donation`;
 
 CREATE TABLE donation (
 
-  `transactionid` int(20) not null,
+  `donationid` int(20) not null AUTO_INCREMENT,
   `amount` float not null,
-  `userid` int(20) not null,
+  `points` int(20) not null,
+  `dateTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `beneficiaryid` int(20) not null,
-  `points` int(20),
-
-  PRIMARY KEY (`transactionid`),
-  KEY `donationFK1` (`userid`),
-  KEY `donationFK2` (`beneficiaryid`),
-  CONSTRAINT `donationFK1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE,
-  CONSTRAINT `donationFK2` FOREIGN KEY (`beneficiaryid`) REFERENCES `beneficiary` (`beneficiaryid`) ON DELETE CASCADE
+  `userid` int(20) not null,
   
+  PRIMARY KEY (`donationid`),
+  KEY `donationFK1` (`beneficiaryid`),
+  KEY `donationFK2` (`userid`),
+  CONSTRAINT `donationFK1` FOREIGN KEY (`beneficiaryid`) REFERENCES `beneficiary` (`beneficiaryid`) ON DELETE CASCADE,
+  CONSTRAINT `donationFK2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE
+
+);
+
+-- create table payment
+DROP TABLE IF EXISTS `payment`;
+
+CREATE TABLE payment (
+
+  `paymentid` int(20) not null AUTO_INCREMENT,
+  `status` varchar(20) not null DEFAULT 'successful',
+  `amount` float not null,
+  `dateTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `beneficiaryid` int(20) not null,
+  `userid` int(20) not null,
+  `donationid` int(20) not null,
+  
+  PRIMARY KEY (`paymentid`),
+  KEY `paymentFK1` (`beneficiaryid`),
+  KEY `paymentFK2` (`userid`),
+  KEY `paymentFK3` (`donationid`),
+  CONSTRAINT `paymentFK1` FOREIGN KEY (`beneficiaryid`) REFERENCES `beneficiary` (`beneficiaryid`) ON DELETE CASCADE,
+  CONSTRAINT `paymentFK2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE,
+  CONSTRAINT `paymentFK3` FOREIGN KEY (`donationid`) REFERENCES `donation` (`donationid`) ON DELETE CASCADE
+
 );
