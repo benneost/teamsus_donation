@@ -108,6 +108,8 @@ insert into `reward` values
   ;
 
 -- create table redemptions
+DROP TABLE IF EXISTS `redemptions`;
+
 CREATE TABLE redemptions (
 
   `redemptionid` int(20) not null,
@@ -129,17 +131,17 @@ CREATE TABLE donation (
 
   `donationid` int(20) not null,
   `amount` float not null,
-  `points` int(20),
+  `points` int(20) not null,
   `dateTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `beneficiaryid` int(20) not null,
   `userid` int(20) not null,
-  `beneficiaryid` int(20) not null
-
-  PRIMARY KEY (`donationid`),
-  KEY `donationFK1` (`userid`),
-  KEY `donationFK2` (`beneficiaryid`),
-  CONSTRAINT `donationFK1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE,
-  CONSTRAINT `donationFK2` FOREIGN KEY (`beneficiaryid`) REFERENCES `beneficiary` (`beneficiaryid`) ON DELETE CASCADE
   
+  PRIMARY KEY (`donationid`),
+  KEY `donationFK1` (`beneficiaryid`),
+  KEY `donationFK2` (`userid`),
+  CONSTRAINT `donationFK1` FOREIGN KEY (`beneficiaryid`) REFERENCES `beneficiary` (`beneficiaryid`) ON DELETE CASCADE,
+  CONSTRAINT `donationFK2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE
+
 );
 
 -- create table payment
@@ -149,18 +151,18 @@ CREATE TABLE payment (
 
   `paymentid` int(20) not null,
   `status` varchar(20) not null,
-  `amount` float(20),
+  `amount` float not null,
   `dateTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `userid` int(20) not null,
   `beneficiaryid` int(20) not null,
-  `donationid` int(20) not null
-
-  PRIMARY KEY (`paymentid`),
-  KEY `paymentFK1` (`userid`),
-  KEY `paymentFK2` (`beneficiaryid`),
-  KEY `paymentFK3` (`donationid`),
-  CONSTRAINT `paymentFK1` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE,
-  CONSTRAINT `paymentFK2` FOREIGN KEY (`beneficiaryid`) REFERENCES `beneficiary` (`beneficiaryid`) ON DELETE CASCADE,
-  CONSTRAINT `paymentFK3` FOREIGN KEY (`donationid`) REFERENCES `donation` (`donationid`) ON DELETE CASCADE
+  `userid` int(20) not null,
+  `donationid` int(20) not null,
   
+  PRIMARY KEY (`paymentid`),
+  KEY `paymentFK1` (`beneficiaryid`),
+  KEY `paymentFK2` (`userid`),
+  KEY `paymentFK3` (`donationid`),
+  CONSTRAINT `paymentFK1` FOREIGN KEY (`beneficiaryid`) REFERENCES `beneficiary` (`beneficiaryid`) ON DELETE CASCADE,
+  CONSTRAINT `paymentFK2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE,
+  CONSTRAINT `paymentFK3` FOREIGN KEY (`donationid`) REFERENCES `donation` (`donationid`) ON DELETE CASCADE
+
 );
