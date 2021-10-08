@@ -4,13 +4,13 @@ const connection = require('../db');
 // userRoutes is an instance of the express router.
 // We use it to define our routes.
 // The router will be added as a middleware and will take control of requests starting with path /user.
-const beneficiaryRoutes = express.Router();
+const rewardRoutes = express.Router();
 
-// This section will help you get a list of all the beneficiaries
-beneficiaryRoutes.route('/')
+// This section will help you get a list of all the rewards
+rewardRoutes.route('/')
     .get(function(req, res, next) {
         connection.query(
-            "SELECT * FROM `beneficiary` ",
+            "SELECT * FROM `reward` ",
             function(error, results, fields) {
             if (error) throw error;
             res.json(results);
@@ -18,11 +18,11 @@ beneficiaryRoutes.route('/')
         );
     });
 
-// This section will help you get a single beneficiary by id
-beneficiaryRoutes.route('/:beneficiaryid')
+// This section will help you get a single reward by id
+rewardRoutes.route('/:rewardid')
     .get(function(req, res, next) {
         connection.query(
-            "SELECT * FROM `beneficiary` WHERE beneficiaryid = ? LIMIT 3", req.params.beneficiaryid,
+            "SELECT * FROM `reward` WHERE rewardid = ? LIMIT 3", req.params.rewardid,
             function(error, results, fields) {
             if (error) throw error;
             res.json(results);
@@ -30,15 +30,17 @@ beneficiaryRoutes.route('/:beneficiaryid')
         );
     });
 
-// This section will help you create a new beneficiary
-beneficiaryRoutes.route('/add')
+// This section will help you create a new reward
+rewardRoutes.route('/add')
     .post(function(req, res) {
-        let sql = `INSERT INTO beneficiary(bname, cause, description, url) VALUES (?)`;
+        let sql = `INSERT INTO reward(rname, description, pointsRequired, redemptionCap, expiryDate, merchantid) VALUES (?)`;
         let values = [
-            req.body.bname,
-            req.body.cause,
+            req.body.rname,
             req.body.description,
-            req.body.url
+            req.body.pointsRequired,
+            req.body.redemptionCap,
+            req.body.expiryDate,
+            req.body.merchantid
         ];  
 
         connection.query( 
@@ -48,7 +50,7 @@ beneficiaryRoutes.route('/add')
                 if (error) throw error;
                 res.json({
                     status: 200,
-                    message: "New beneficiary added successfully"
+                    message: "New reward added successfully"
                 })  
             }
         );
@@ -57,4 +59,4 @@ beneficiaryRoutes.route('/add')
     });
 
 
-module.exports = beneficiaryRoutes;
+module.exports = rewardRoutes;

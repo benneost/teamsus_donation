@@ -4,13 +4,13 @@ const connection = require('../db');
 // userRoutes is an instance of the express router.
 // We use it to define our routes.
 // The router will be added as a middleware and will take control of requests starting with path /user.
-const beneficiaryRoutes = express.Router();
+const merchantRoutes = express.Router();
 
-// This section will help you get a list of all the beneficiaries
-beneficiaryRoutes.route('/')
+// This section will help you get a list of all the merchants
+merchantRoutes.route('/')
     .get(function(req, res, next) {
         connection.query(
-            "SELECT * FROM `beneficiary` ",
+            "SELECT * FROM `merchant` ",
             function(error, results, fields) {
             if (error) throw error;
             res.json(results);
@@ -18,11 +18,11 @@ beneficiaryRoutes.route('/')
         );
     });
 
-// This section will help you get a single beneficiary by id
-beneficiaryRoutes.route('/:beneficiaryid')
+// This section will help you get a single merchant by id
+merchantRoutes.route('/:merchantid')
     .get(function(req, res, next) {
         connection.query(
-            "SELECT * FROM `beneficiary` WHERE beneficiaryid = ? LIMIT 3", req.params.beneficiaryid,
+            "SELECT * FROM `merchant` WHERE merchantid = ? LIMIT 3", req.params.merchantid,
             function(error, results, fields) {
             if (error) throw error;
             res.json(results);
@@ -30,15 +30,12 @@ beneficiaryRoutes.route('/:beneficiaryid')
         );
     });
 
-// This section will help you create a new beneficiary
-beneficiaryRoutes.route('/add')
+// This section will help you create a new merchant
+merchantRoutes.route('/add')
     .post(function(req, res) {
-        let sql = `INSERT INTO beneficiary(bname, cause, description, url) VALUES (?)`;
+        let sql = `INSERT INTO merchant(mname) VALUES (?)`;
         let values = [
-            req.body.bname,
-            req.body.cause,
-            req.body.description,
-            req.body.url
+            req.body.mname
         ];  
 
         connection.query( 
@@ -48,7 +45,7 @@ beneficiaryRoutes.route('/add')
                 if (error) throw error;
                 res.json({
                     status: 200,
-                    message: "New beneficiary added successfully"
+                    message: "New merchant added successfully"
                 })  
             }
         );
@@ -57,4 +54,4 @@ beneficiaryRoutes.route('/add')
     });
 
 
-module.exports = beneficiaryRoutes;
+module.exports = merchantRoutes;

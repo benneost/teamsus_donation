@@ -9,10 +9,20 @@ app.use(express.urlencoded({ extended: true }));
 // Add var routes to this section
 const user = require("./routes/users.js");
 const beneficiary = require("./routes/beneficiary.js");
+const merchant = require("./routes/merchant.js");
+const reward = require("./routes/reward.js");
+const redemption = require("./routes/redemption.js");
+const donation = require("./routes/donation.js");
+const payment = require("./routes/payment.js");
 
 // Add routes to this section
 app.use('/user', user);
 app.use('/beneficiary', beneficiary);
+app.use('/merchant', merchant);
+app.use('/reward', reward);
+app.use('/redemption', redemption);
+app.use('/donation', donation);
+app.use('/payment', payment);
 
 
 // Test if server is working
