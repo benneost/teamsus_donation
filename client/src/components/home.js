@@ -1,54 +1,42 @@
-import React from 'react';
-import { MDBBtn, MDBContainer } from 'mdb-react-ui-kit';
+import React, { useState } from 'react';
+import { MDBBtn, MDBContainer, MDBNavbar,
+    MDBNavbarBrand,
+    MDBNavbarToggler, 
+    MDBIcon,
+    MDBNavbarNav,
+    MDBNavbarItem,
+    MDBNavbarLink,
+    MDBCollapse } from 'mdb-react-ui-kit';
+
 
 function Home() {
+    const [showNavSecond, setShowNavSecond] = useState(false);
+
     return (
-    
-    <MDBContainer fluid>
-    <title>Home Page</title>
-    <div
-        className='d-flex justify-content-center align-items-center'
-        style={{ height: '100vh' }}
-    >
-        <div className='text-center'>
-        <img
-            className='mb-4'
-            src='https://mdbootstrap.com/img/logo/mdb-transparent-250px.png'
-            style={{ width: 250, height: 90 }}
-        />
-        <h5 className='mb-3'>
-            THIS IS THE Home PAGE
-        </h5>
-        <MDBBtn
-            tag='a'
-            href='/beneficiary'
-            // target='_blank'
-            role='button'
-            style={{margin: 10}}
-        >
-            Beneficiaries
-        </MDBBtn>
-        <MDBBtn
-            tag='a'
-            href='/rewards'
-            // target='_blank'
-            role='button'
-            style={{margin: 10}}
-        >
-            Rewards
-        </MDBBtn>
-        <MDBBtn
-            tag='a'
-            href='/payment'
-            // target='_blank'
-            role='button'
-            style={{margin: 10}}
-        >
-            Payment
-        </MDBBtn>
-        </div>
-    </div>
-    </MDBContainer>
+        <MDBNavbar expand='lg' light bgColor='light'>
+        <MDBContainer fluid>
+            <MDBNavbarBrand href='#'>AppName</MDBNavbarBrand>
+            <MDBNavbarToggler
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+            onClick={() => setShowNavSecond(!showNavSecond)}
+            >
+            <MDBIcon icon='bars' fas />
+            </MDBNavbarToggler>
+            <MDBCollapse navbar show={showNavSecond}>
+            <MDBNavbarNav>
+                <MDBNavbarLink active aria-current='page' href='/home'>
+                Home
+                </MDBNavbarLink>
+                <MDBNavbarLink href='/profile'>Profile</MDBNavbarLink>
+                <MDBNavbarLink href='/beneficiary'>Donation</MDBNavbarLink>
+                <MDBNavbarLink href='/rewards'>Rewards</MDBNavbarLink>
+            </MDBNavbarNav>
+            </MDBCollapse>
+        </MDBContainer>
+        </MDBNavbar>
+
+        
     );
 }
 

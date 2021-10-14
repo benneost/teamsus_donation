@@ -23,7 +23,7 @@ import Home from "./components/home";
 
 const App = () => {
   return (
-
+    
     // this portion is to allow the app to route to specific paths
     <BrowserRouter>
       <Route exact path="/">
@@ -33,15 +33,12 @@ const App = () => {
       {/* set the path to which link u want to route to, the component is the function in its respective js file */}
       {/* <Route path='/redemption' component={Redemption}/> */}
       
-      <Route path='/rewards' component={Rewards}/>
       <Route path='/payment' component={Payment}/>
       <Route path='/payment_outcome' component={Payment_outcome}/>
       <Route path='/beneficiary' component={Beneficiary}/>
 
       <Route path='/home' component={Home}/>
     </BrowserRouter>
-
-    
   );
 };
 
