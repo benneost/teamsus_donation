@@ -10,6 +10,7 @@ import Payment from "./components/payment";
 import Payment_outcome from "./components/payment_outcome";
 import Beneficiary from "./components/beneficiary";
 import Home from "./components/home";
+import createCard from "./components/contact";
 
 // To connect to our db
 // require('dotenv').config()
@@ -37,6 +38,7 @@ const App = () => {
       <Route path='/payment' component={Payment}/>
       <Route path='/payment_outcome' component={Payment_outcome}/>
       <Route path='/beneficiary' component={Beneficiary}/>
+      <Route path='/contact' component={createCard}/>
 
       <Route path='/home' component={Home}/>
     </BrowserRouter>

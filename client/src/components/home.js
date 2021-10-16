@@ -46,6 +46,15 @@ function Home() {
         >
             Payment
         </MDBBtn>
+        <MDBBtn
+            tag='a'
+            href='/contact'
+            // target='_blank'
+            role='button'
+            style={{margin: 10}}
+        >
+            Contacts
+        </MDBBtn>
         </div>
     </div>
     </MDBContainer>
