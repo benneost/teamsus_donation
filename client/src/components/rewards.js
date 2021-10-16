@@ -9,6 +9,7 @@ import { MDBModal,
     MDBModalFooter,
 } from 'mdb-react-ui-kit';
 import { useHistory } from 'react-router-dom';
+import NavBar from "./navbar";
 
 
 function Rewards() {
@@ -21,6 +22,7 @@ function Rewards() {
     return (
     
     <MDBContainer fluid>
+    <NavBar></NavBar>
     <title>Rewards</title>
     {/* this is the navbar thats imported from the respective navbar js*/}
     {/* <LearnerNavbar/> */}

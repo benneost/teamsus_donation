@@ -9,7 +9,7 @@ import Redemption from "./components/redemption";
 import Payment from "./components/payment";
 import Payment_outcome from "./components/payment_outcome";
 import Beneficiary from "./components/beneficiary";
-import Home from "./components/home";
+import NavBar from "./components/navbar";
 import createCard from "./components/contact";
 
 // To connect to our db
@@ -28,7 +28,7 @@ const App = () => {
     // this portion is to allow the app to route to specific paths
     <BrowserRouter>
       <Route exact path="/">
-        <Redirect to='/home'/>
+        <Redirect to='/NavBar'/>
       </Route>
 
       {/* set the path to which link u want to route to, the component is the function in its respective js file */}
@@ -38,8 +38,9 @@ const App = () => {
       <Route path='/payment_outcome' component={Payment_outcome}/>
       <Route path='/beneficiary' component={Beneficiary}/>
       <Route path='/contact' component={createCard}/>
+      <Route path='/rewards' component={Rewards}/>
 
-      <Route path='/home' component={Home}/>
+      <Route path='/NavBar' component={NavBar}/>
     </BrowserRouter>
   );
 };
