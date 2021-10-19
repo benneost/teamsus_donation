@@ -124,26 +124,6 @@ CREATE TABLE redemptions (
 
 );
 
--- create table donation
-DROP TABLE IF EXISTS `donation`;
-
-CREATE TABLE donation (
-
-  `donationid` int(20) not null AUTO_INCREMENT,
-  `amount` float not null,
-  `points` int(20) not null,
-  `dateTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `beneficiaryid` int(20) not null,
-  `userid` int(20) not null,
-  
-  PRIMARY KEY (`donationid`),
-  KEY `donationFK1` (`beneficiaryid`),
-  KEY `donationFK2` (`userid`),
-  CONSTRAINT `donationFK1` FOREIGN KEY (`beneficiaryid`) REFERENCES `beneficiary` (`beneficiaryid`) ON DELETE CASCADE,
-  CONSTRAINT `donationFK2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE
-
-);
-
 -- create table payment
 DROP TABLE IF EXISTS `payment`;
 
@@ -155,14 +135,34 @@ CREATE TABLE payment (
   `dateTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `beneficiaryid` int(20) not null,
   `userid` int(20) not null,
-  `donationid` int(20) not null,
   
   PRIMARY KEY (`paymentid`),
   KEY `paymentFK1` (`beneficiaryid`),
   KEY `paymentFK2` (`userid`),
-  KEY `paymentFK3` (`donationid`),
   CONSTRAINT `paymentFK1` FOREIGN KEY (`beneficiaryid`) REFERENCES `beneficiary` (`beneficiaryid`) ON DELETE CASCADE,
-  CONSTRAINT `paymentFK2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE,
-  CONSTRAINT `paymentFK3` FOREIGN KEY (`donationid`) REFERENCES `donation` (`donationid`) ON DELETE CASCADE
+  CONSTRAINT `paymentFK2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE
+
+);
+
+-- create table donation
+DROP TABLE IF EXISTS `donation`;
+
+CREATE TABLE donation (
+
+  `donationid` int(20) not null AUTO_INCREMENT,
+  `amount` float not null,
+  `points` int(20) not null,
+  `dateTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `beneficiaryid` int(20) not null,
+  `userid` int(20) not null,
+  `paymentid` int(20) not null,
+  
+  PRIMARY KEY (`donationid`),
+  KEY `donationFK1` (`beneficiaryid`),
+  KEY `donationFK2` (`userid`),
+  KEY `donationFK3` (`paymentid`),
+  CONSTRAINT `donationFK1` FOREIGN KEY (`beneficiaryid`) REFERENCES `beneficiary` (`beneficiaryid`) ON DELETE CASCADE,
+  CONSTRAINT `donationFK2` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE,
+  CONSTRAINT `donationFK3` FOREIGN KEY (`paymentid`) REFERENCES `payment` (`paymentid`) ON DELETE CASCADE
 
 );
