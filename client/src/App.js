@@ -33,7 +33,7 @@ const App = () => {
     // this portion is to allow the app to route to specific paths
     <BrowserRouter>
       <Route exact path="/">
-        <Redirect to='/NavBar'/>
+        <Redirect to='/home'/>
       </Route>
 
       {/* set the path to which link u want to route to, the component is the function in its respective js file */}
@@ -45,6 +45,8 @@ const App = () => {
       <Route path='/contact' component={createCard}/>
       <Route path='/rewards' component={Rewards}/>
       <Route path='/profile_page' component={Profile}/>
+      <Route path='/donation' component={Donation}/>
+      <Route path='/currentaffair' component={CurrentAffairs}/>
       {/* <Route path='/credit_card' component={CardContainer}/> */}
 
       <Route path='/NavBar' component={NavBar}/>
