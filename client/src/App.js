@@ -46,7 +46,7 @@ const App = () => {
       <Route path='/rewards' component={Rewards}/>
       <Route path='/profile_page' component={Profile}/>
       <Route path='/donation' component={Donation}/>
-      <Route path='/currentaffair' component={CurrentAffairs}/>
+      <Route path='/currentaffairs' component={CurrentAffairs}/>
       {/* <Route path='/credit_card' component={CardContainer}/> */}
 
       <Route path='/NavBar' component={NavBar}/>
