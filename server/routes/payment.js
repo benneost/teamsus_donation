@@ -37,8 +37,7 @@ paymentRoutes.route('/add')
         let values = [
             req.body.amount,
             req.body.beneficiaryid,
-            req.body.userid,
-            req.body.donationid
+            req.body.userid
         ];  
 
         connection.query( 

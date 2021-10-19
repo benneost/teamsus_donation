@@ -38,7 +38,8 @@ donationRoutes.route('/add')
             req.body.amount,
             req.body.amount * 10,
             req.body.beneficiaryid,
-            req.body.userid
+            req.body.userid,
+            req.body.donationid
         ];  
 
         connection.query( 

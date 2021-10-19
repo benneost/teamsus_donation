@@ -28,22 +28,26 @@ function Beneficiary(){
         setIsOpen(!isOpen);
     }
 
+    // useEffect(()=>{
+    //     axios.get('http://localhost:3000//beneficiary')
+    //     .then(response => {
+    //         // setData(response.data);
+    //         console.log("response")
+    //     })
+    //     .catch(error=>{
+    //         console.error("Error fetching data: ", error);
+    //         setError(error);
+    //     })
+    
+    //     .finally(()=>{
+    //         setLoading(false);
+    //     })
+    // });
+
+
     return ( 
 
-        useEffect(()=>{
-            axios('/beneficiary')
-            .then(response => {setData(response.data)})
         
-            .catch(error=>{
-                console.error("Error fetching data: ", error);
-                setError(error);
-            })
-        
-            .finally(()=>{
-                setLoading(false);
-            })
-        }),
-
         
         <MDBContainer fluid>
         <NavBar></NavBar>
