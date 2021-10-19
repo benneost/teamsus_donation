@@ -57,4 +57,5 @@ beneficiaryRoutes.route('/add')
     });
 
 
+
 module.exports = beneficiaryRoutes;
