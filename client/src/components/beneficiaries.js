@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Popup from './popup';
 import { MDBBtn, MDBContainer, MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBRow, MDBCol, MDBCardSubTitle, MDBNavbar,
     MDBNavbarBrand,
@@ -12,11 +12,17 @@ import NavBar from "./navbar";
 
 import "./findoutmore.css"
 import "bootstrap/dist/css/bootstrap.css";
+import axios from "axios";
+
 
 function Beneficiary(){
     const [showNavSecond, setShowNavSecond] = useState(false);
 
     const [isOpen, setIsOpen] = useState(false);
+
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const togglePopup = () => {
         setIsOpen(!isOpen);
@@ -24,9 +30,23 @@ function Beneficiary(){
 
     return ( 
 
+        useEffect(()=>{
+            axios('/beneficiary')
+            .then(response => {setData(response.data)})
+        
+            .catch(error=>{
+                console.error("Error fetching data: ", error);
+                setError(error);
+            })
+        
+            .finally(()=>{
+                setLoading(false);
+            })
+        }),
+
+        
         <MDBContainer fluid>
         <NavBar></NavBar>
-
         <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand">Beneficiaries</a>

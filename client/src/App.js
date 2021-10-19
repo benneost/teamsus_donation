@@ -41,7 +41,7 @@ const App = () => {
       <Route path='/home' component={Home}/>
       <Route path='/payment' component={Payment}/>
       <Route path='/payment_outcome' component={Payment_outcome}/>
-      <Route path='/beneficiary' component={Beneficiary}/>
+      <Route path='/beneficiaries' component={Beneficiary}/>
       <Route path='/contact' component={createCard}/>
       <Route path='/rewards' component={Rewards}/>
       <Route path='/profile_page' component={Profile}/>
