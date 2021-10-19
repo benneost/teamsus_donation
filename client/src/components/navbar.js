@@ -28,7 +28,7 @@ function NavBar() {
                 <MDBNavbarLink active aria-current='page' href='/home'>
                 Home
                 </MDBNavbarLink>
-                <MDBNavbarLink href='/profile'>Profile</MDBNavbarLink>
+                <MDBNavbarLink href='/profile_page'>Profile</MDBNavbarLink>
                 <MDBNavbarLink href='/beneficiary'>Donation</MDBNavbarLink>
                 <MDBNavbarLink href='/rewards'>Rewards</MDBNavbarLink>
             </MDBNavbarNav>

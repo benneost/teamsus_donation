@@ -11,6 +11,7 @@ import Payment_outcome from "./components/payment_outcome";
 import Beneficiary from "./components/beneficiary";
 import NavBar from "./components/navbar";
 import createCard from "./components/contact";
+import Profile from "./components/profile_page";
 
 // To connect to our db
 // require('dotenv').config()
@@ -39,6 +40,8 @@ const App = () => {
       <Route path='/beneficiary' component={Beneficiary}/>
       <Route path='/contact' component={createCard}/>
       <Route path='/rewards' component={Rewards}/>
+      <Route path='/profile_page' component={Profile}/>
+      {/* <Route path='/credit_card' component={CardContainer}/> */}
 
       <Route path='/NavBar' component={NavBar}/>
     </BrowserRouter>

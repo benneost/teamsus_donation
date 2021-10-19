@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBDropdown, MDBBtn, MDBContainer, MDBInput ,MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBRow, MDBCol, MDBCardSubTitle } from 'mdb-react-ui-kit';
 import "./styles.css";
+import Popup from './popup';
+import NavBar from './navbar';
 
 function Payment() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    }
+
     return (
     
     <MDBContainer fluid>
+    <NavBar></NavBar>
     <title>Payment</title>
     {/* this is the navbar thats imported from the respective navbar js*/}
     {/* <LearnerNavbar/> */}
@@ -37,7 +46,7 @@ function Payment() {
         <MDBInput label="Amount"/>
         </div>
         <div className="justify-content-center">
-        <MDBBtn onClick={()=> alert("Payment Success")}
+        <MDBBtn href='#' onClick={togglePopup}
           style={{
             backgroundColor: "#348ceb",
             color: "white",
@@ -49,6 +58,13 @@ function Payment() {
             alignItems: 'center',
             justifyContent:'center'
           }}>Pay</MDBBtn>
+          {isOpen && <Popup
+                        content={<>
+                            <h3>Payment Success!!</h3>
+                            <b>$xxx have been transferred to Tanya</b>
+                        </>}
+                        handleClose={togglePopup}
+                        />}
           </div>
       </MDBCard>
     </div>
