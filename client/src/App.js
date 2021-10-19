@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
 // We import all the components we need in our app
 import Rewards from "./components/rewards";
+import Home from "./components/home";
 import Redemption from "./components/redemption";
 import Payment from "./components/payment";
 import Payment_outcome from "./components/payment_outcome";
@@ -33,7 +34,7 @@ const App = () => {
 
       {/* set the path to which link u want to route to, the component is the function in its respective js file */}
       {/* <Route path='/redemption' component={Redemption}/> */}
-      
+      <Route path='/home' component={Home}/>
       <Route path='/payment' component={Payment}/>
       <Route path='/payment_outcome' component={Payment_outcome}/>
       <Route path='/beneficiary' component={Beneficiary}/>

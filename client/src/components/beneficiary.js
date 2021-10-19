@@ -8,6 +8,7 @@ import { MDBBtn, MDBContainer, MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBC
     MDBNavbarLink,
     MDBCollapse } from 'mdb-react-ui-kit';
 import { useHistory } from 'react-router-dom';
+import NavBar from "./navbar";
 
 import "./findoutmore.css"
 import "bootstrap/dist/css/bootstrap.css";
@@ -23,29 +24,8 @@ function Beneficiary(){
 
     return ( 
 
-        <MDBContainer>
-        <MDBNavbar expand='lg' light bgColor='light'>
         <MDBContainer fluid>
-            <MDBNavbarBrand href='#'>AppName</MDBNavbarBrand>
-            <MDBNavbarToggler
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-            onClick={() => setShowNavSecond(!showNavSecond)}
-            >
-            <MDBIcon icon='bars' fas />
-            </MDBNavbarToggler>
-            <MDBCollapse navbar show={showNavSecond}>
-            <MDBNavbarNav>
-                <MDBNavbarLink href='/home'>
-                Home
-                </MDBNavbarLink>
-                <MDBNavbarLink href='/profile'>Profile</MDBNavbarLink>
-                <MDBNavbarLink active aria-current='page' href='/beneficiary'>Donation</MDBNavbarLink>
-                <MDBNavbarLink href='/rewards'>Rewards</MDBNavbarLink>
-            </MDBNavbarNav>
-            </MDBCollapse>
-        </MDBContainer>
-        </MDBNavbar>
+        <NavBar></NavBar>
 
         <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
