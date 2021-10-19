@@ -33,7 +33,7 @@ paymentRoutes.route('/:paymentid')
 // This section will help you create a new payment
 paymentRoutes.route('/add')
     .post(function(req, res) {
-        let sql = `INSERT INTO payment(amount, beneficiaryid, userid, donationid) VALUES (?)`;
+        let sql = `INSERT INTO payment(amount, beneficiaryid, userid) VALUES (?)`;
         let values = [
             req.body.amount,
             req.body.beneficiaryid,

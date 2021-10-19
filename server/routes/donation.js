@@ -33,13 +33,13 @@ donationRoutes.route('/:donationid')
 // This section will help you create a new donation
 donationRoutes.route('/add')
     .post(function(req, res) {
-        let sql = `INSERT INTO donation(amount, points, beneficiaryid, userid) VALUES (?)`;
+        let sql = `INSERT INTO donation(amount, points, beneficiaryid, userid, paymentid) VALUES (?)`;
         let values = [
             req.body.amount,
             req.body.amount * 10,
             req.body.beneficiaryid,
             req.body.userid,
-            req.body.donationid
+            req.body.paymentid
         ];  
 
         connection.query( 
