@@ -13,14 +13,18 @@ import NavBar from "./navbar";
 import "./findoutmore.css"
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
+import beneficiaryimage from "./beneficiaryimage";
 
 
 function Beneficiary(){
+    
+
+
     const [showNavSecond, setShowNavSecond] = useState(false);
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -43,7 +47,8 @@ function Beneficiary(){
         //     setLoading(false);
         // })
     }, []);
-
+    
+    const randomImage = beneficiaryimage[Math.floor(Math.random() * beneficiaryimage.length)];
 
     return ( 
 
@@ -70,11 +75,10 @@ function Beneficiary(){
         </nav>
 
         <MDBRow>
-            
                 {data.map( (beneficiary) => (
                     <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
                         <MDBCard style={{ maxWidth: '22rem' }}>
-                            <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
+                            <MDBCardImage src={randomImage} position='top' alt='...' />
                             <MDBCardBody>
                                 <MDBCardTitle>{beneficiary.bname}</MDBCardTitle>
                                 <MDBCardText>
