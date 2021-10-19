@@ -29,7 +29,7 @@ function NavBar() {
                 Home
                 </MDBNavbarLink>
                 <MDBNavbarLink href='/profile'>Profile</MDBNavbarLink>
-                <MDBNavbarLink href='/beneficiary'>Donation</MDBNavbarLink>
+                <MDBNavbarLink href='/donation'>Donation</MDBNavbarLink>
                 <MDBNavbarLink href='/rewards'>Rewards</MDBNavbarLink>
             </MDBNavbarNav>
             </MDBCollapse>

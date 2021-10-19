@@ -29,7 +29,7 @@ function Beneficiary(){
 
         <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand">Current Affairs</a>
+            <a class="navbar-brand">Beneficiaries</a>
             <form class="d-flex input-group w-auto">
             <input
                 type="search"
@@ -357,10 +357,12 @@ function Beneficiary(){
                         />}
                     </MDBCardBody>
                 </MDBCard>
+
+
             </MDBCol>
 
-
         </MDBRow>
+
         </MDBContainer>
 
         );

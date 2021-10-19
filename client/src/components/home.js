@@ -19,7 +19,7 @@ function Home() {
     <NavBar></NavBar>
 
     <div class="container">
-    <div class="row">
+    <div class="row fancy">
         <div id="card" class="col-sm-12">
             card amount
         </div>
@@ -27,16 +27,24 @@ function Home() {
 
     <div class="row">
         <div class="col-sm-6">
-        payment
+        <div class="boxed">
+            <MDBNavbarLink href='/payment' style={{color:'black'}}>Payment</MDBNavbarLink>
+        </div>
         </div>
         <div class="col-sm-6">
-        profile
+        <div class="boxed">
+            <MDBNavbarLink href='/profile' style={{color:'black'}}>Profile</MDBNavbarLink>
+        </div>
         </div>
         <div class="col-sm-6">
-        beneficiaries
+        <div class="boxed">
+            <MDBNavbarLink href='/donation' style={{color:'black'}}>Donation</MDBNavbarLink>
+        </div>
         </div>
         <div class="col-sm-6">
-        rewards
+        <div class="boxed">
+            <MDBNavbarLink href='/rewards' style={{color:'black'}}>Rewards</MDBNavbarLink>
+        </div>
         </div>
     </div>
 

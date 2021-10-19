@@ -9,9 +9,12 @@ import Home from "./components/home";
 import Redemption from "./components/redemption";
 import Payment from "./components/payment";
 import Payment_outcome from "./components/payment_outcome";
-import Beneficiary from "./components/beneficiary";
+import Beneficiary from "./components/beneficiaries";
 import NavBar from "./components/navbar";
 import createCard from "./components/contact";
+import Donation from "./components/donation";
+import CurrentAffairs from "./components/currentaffairs";
+
 
 // To connect to our db
 // require('dotenv').config()
