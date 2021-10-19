@@ -53,8 +53,18 @@ donationRoutes.route('/add')
                 })  
             }
         );
+    });
 
-        
+// This section will help you get a donation by userid
+donationRoutes.route('/:userid')
+    .get(function(req, res, next) {
+        connection.query(
+            "SELECT * FROM `donation` WHERE userid = ? ", req.params.userid,
+            function(error, results, fields) {
+            if (error) throw error;
+            res.json(results);
+            }
+        );
     });
 
 
