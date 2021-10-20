@@ -32,15 +32,15 @@
                       linear-gradient(175deg, rgba(0,0,0,0) 75%, #9f8fa4 75%),
                       linear-gradient( 85deg, rgba(0,0,0,0) 83%, #9f8fa4 83%),
                       linear-gradient(175deg, rgba(0,0,0,0) 70%, #74a6ae 70%),
-                      linear-gradient( 85deg, rgba(0,0,0,0) 80%, #74a6ae 80%);
+                      linwear-gradient( 85deg, rgba(0,0,0,0) 80%, #74a6ae 80%);
   }
 
   .boxed {
     text-align:center;
     padding: 30px;
     margin: 10px;
-    border-radius: 10%;
-
+    border-radius: 20px;
+    background-color: #104046;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
 

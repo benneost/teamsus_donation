@@ -28,22 +28,22 @@ function Home() {
     <div class="row">
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/payment' style={{color:'black'}}>Payment</MDBNavbarLink>
+            <MDBNavbarLink href='/payment' style={{color:'white'}}>Payment</MDBNavbarLink>
         </div>
         </div>
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/profile' style={{color:'black'}}>Profile</MDBNavbarLink>
+            <MDBNavbarLink href='/profile' style={{color:'white'}}>Profile</MDBNavbarLink>
         </div>
         </div>
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/donation' style={{color:'black'}}>Donation</MDBNavbarLink>
+            <MDBNavbarLink href='/donation' style={{color:'white'}}>Donation</MDBNavbarLink>
         </div>
         </div>
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/rewards' style={{color:'black'}}>Rewards</MDBNavbarLink>
+            <MDBNavbarLink href='/rewards' style={{color:'white'}}>Rewards</MDBNavbarLink>
         </div>
         </div>
     </div>
