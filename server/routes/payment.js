@@ -56,7 +56,7 @@ paymentRoutes.route('/add')
     });
 
 // This section will help you get a donation by userid
-donationRoutes.route('/:userid')
+paymentRoutes.route('/:userid')
     .get(function(req, res, next) {
         connection.query(
             "SELECT * FROM `payment` WHERE userid = ? ", req.params.userid,

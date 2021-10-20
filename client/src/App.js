@@ -15,7 +15,7 @@ import createCard from "./components/contact";
 import Profile from "./components/profile_page";
 import Donation from "./components/donation";
 import CurrentAffairs from "./components/currentaffairs";
-
+import HistoryTab from "./components/history_page";
 
 // To connect to our db
 // require('dotenv').config()
@@ -47,6 +47,7 @@ const App = () => {
       <Route path='/profile_page' component={Profile}/>
       <Route path='/donation' component={Donation}/>
       <Route path='/currentaffairs' component={CurrentAffairs}/>
+      <Route path='/history_page' component={HistoryTab}/>
       {/* <Route path='/credit_card' component={CardContainer}/> */}
 
       <Route path='/NavBar' component={NavBar}/>

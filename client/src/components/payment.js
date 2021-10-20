@@ -1,28 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBDropdown, MDBBtn, MDBContainer, MDBInput ,MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBRow, MDBCol, MDBCardSubTitle } from 'mdb-react-ui-kit';
 import "./styles.css";
+import axios from 'axios';
 import Popup from './popup';
 import NavBar from './navbar';
 
 function Payment() {
     const [isOpen, setIsOpen] = useState(false);
+    const [data, setData] = useState(null);
 
     const togglePopup = () => {
         setIsOpen(!isOpen);
     }
 
+    const [amountSend, setAmountSend] = useState('')
+
+
+    const handleChange = (event) => {
+        setAmountSend(event.target.value)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const payload={amount:amountSend,
+                       beneficiaryid: '1',
+                       userid: '1'
+                    }
+        axios.post('payment/add', payload)
+          .then(function (response) {
+              console.log(response)
+              togglePopup()
+          })
+          .catch(function (error) {
+              console.log(error)
+          }) 
+        }
+
     return (
-    
     <MDBContainer fluid>
     <NavBar></NavBar>
     <title>Payment</title>
-    {/* this is the navbar thats imported from the respective navbar js*/}
-    {/* <LearnerNavbar/> */}
-
-    {/* can edit whatever u want here */}
     <div
         style={{ height: '100vh', marginTop: '120px'}}
         className= 'px-4 d-flex align-items-baseline justify-content-center'>
+        <form onSubmit={handleSubmit}>
         <div className='text-center'>
             <div>
                 <h5 className='mb-3 py-4'>
@@ -39,14 +60,12 @@ function Payment() {
         alignItems="center"
         borderWidth="2px"
         borderRadius="lg">
-        {/* <img src='https://expertphotography.b-cdn.net/wp-content/uploads/2020/05/photo-of-woman-wearing-yellow.jpg' className='img-fluid rounded-circle' sm='4' style={{maxWidth: '7rem'}} alt='...' />
-        <h6>Tanya</h6> */}
         <MDBCardText fontWeight="bold">Enter Amount:</MDBCardText>
         <div className="form-group" style={{marginLeft: '20px', marginRight:'20px'}}> 
-        <MDBInput label="Amount"/>
+        <MDBInput label="Amount" type="text" onChange={(event)=>handleChange(event)}/>
         </div>
         <div className="justify-content-center">
-        <MDBBtn href='#' onClick={togglePopup}
+        <MDBBtn href='#'
           style={{
             backgroundColor: "#348ceb",
             color: "white",
@@ -57,7 +76,8 @@ function Payment() {
             marginBottom: '10px',
             alignItems: 'center',
             justifyContent:'center'
-          }}>Pay</MDBBtn>
+          }} 
+          onClick={(e) => handleSubmit(e)}>Pay</MDBBtn>
           {isOpen && <Popup
                         content={<>
                             <h3>Payment Success!!</h3>
@@ -69,87 +89,9 @@ function Payment() {
       </MDBCard>
     </div>
     </div>
+    </form>
     </div>
     </MDBContainer>
     );
 }
-    // );
-/* <MDBContainer fluid>
-<MDBCol>
-<MDBRow
-      margin={4}
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center">
-      {/* <MDBCard
-        padding={4}
-        width="300px"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
-        borderWidth="2px"
-        borderRadius="lg">
-        <MDBCardText fontWeight="bold">Credit/Debit Card Deposits</MDBCardText>
-        <MDBDropdown placeholder="25$" width="270px" margin={3}>
-        <MDBDropdownToggle caret color="primary">
-        Amount
-      </MDBDropdownToggle>
-      <MDBDropdownMenu basic>
-          <MDBDropdownItem>5$</MDBDropdownItem>
-          <MDBDropdownItem>10$</MDBDropdownItem>
-          <MDBDropdownItem>15$</MDBDropdownItem>
-          <MDBDropdownItem>20$</MDBDropdownItem>
-          <MDBDropdownItem>50$</MDBDropdownItem>
-          <MDBDropdownItem>75$</MDBDropdownItem>
-          <MDBDropdownItem>100$</MDBDropdownItem>
-          <MDBDropdownItem>250$</MDBDropdownItem>
-          <MDBDropdownItem>400$</MDBDropdownItem>
-        </MDBDropdownMenu>
-        </MDBDropdown>
-        <MDBBtn
-          style={{ shape: "rect", size: "medium", margin: "1.5rem" }}
-        />
-      </MDBCard> */
-//       <MDBCard
-//         padding={4}
-//         marginTop="27px"
-//         width="300px"
-//         flexDirection="column"
-//         justifyContent="center"
-//         alignItems="center"
-//         borderWidth="2px"
-//         borderRadius="lg">
-//         <MDBCardText fontWeight="bold">Payment</MDBCardText>
-//         <MDBDropdown placeholder="25$" width="270px" margin={3}>
-//         <MDBDropdownToggle caret color="primary">
-//         Amount
-//       </MDBDropdownToggle>
-//       <MDBDropdownMenu basic>
-//           <option value="5$">5$</option>
-//           <option value="10$">10$</option>
-//           <option value="15$">15$</option>
-//           <option value="20$">20$</option>
-//           {/* <option value="25$">25$</option> */}
-//           <option value="50$">50$</option>
-//           <option value="75$">75$</option>
-//           <option value="100$">100$</option>
-//           <option value="250$">250$</option>
-//           <option value="400$">400$</option>
-//         </MDBDropdownMenu>
-//         </MDBDropdown>
-//         <MDBBtn
-//           style={{
-
-//             backgroundColor: "#348ceb",
-//             color: "white",
-//             borderRadius: "3px",
-//             width: "130px",
-//             height: "31px",
-//             marginTop: '10px'
-//           }}
-//         >Pay</MDBBtn>
-//       </MDBCard>
-//     </MDBRow>
-//     </MDBCol>
-//     </MDBContainer>
 export default Payment;
