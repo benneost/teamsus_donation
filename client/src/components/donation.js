@@ -18,6 +18,8 @@ function Donation() {
 
     const randomImage = beneficiaryimage[Math.floor(Math.random() * beneficiaryimage.length)];
 
+    const i = 0;
+
 
     return (
     <MDBContainer fluid>
