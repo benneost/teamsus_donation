@@ -6,16 +6,6 @@ import Contacts from "../contact_info";
 function createCard(contact) {
     return(
     <div>
-    {/* <Card 
-      key={contact.id}
-      id={contact.id}
-      name={contact.name}
-      imgURL={contact.imgURL}
-      phone={contact.phone}
-      email={contact.email}
-    /> */}
-    <h1 className="text-center">My Contacts</h1>
-  
     {Contacts.map(Card)}
     </div>
   ); 

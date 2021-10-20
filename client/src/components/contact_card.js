@@ -7,8 +7,9 @@ import NavBar from "./navbar";
 function Card(props) {
   return (
     <MDBContainer fluid>
+    <NavBar></NavBar>
     <div class="col-sm-6">
-        
+    <h1 className="text-center" style={{marginTop:'10px'}}>My Contacts</h1>
         <MDBCard style={{margin: '30px'}}>
                     <MDBNavbarLink href='/payment'><img src='https://expertphotography.b-cdn.net/wp-content/uploads/2020/05/photo-of-woman-wearing-yellow.jpg' width = '300px' position='top' alt='...' /></MDBNavbarLink>
                     <MDBCardBody className='text-center'>
