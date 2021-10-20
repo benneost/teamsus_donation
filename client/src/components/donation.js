@@ -12,8 +12,13 @@ import NavBar from "./navbar";
 import "./home.css";
 
 import "bootstrap/dist/css/bootstrap.css";
+import beneficiaryimage from "./beneficiaryimage";
 
 function Donation() {
+
+    const randomImage = beneficiaryimage[Math.floor(Math.random() * beneficiaryimage.length)];
+
+
     return (
     <MDBContainer fluid>
     <NavBar></NavBar>
@@ -27,7 +32,18 @@ function Donation() {
         Recommended
         <div class="row">
             <div class="col-sm boxed">
-            Insert Event
+            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
+                <MDBCard style={{ maxWidth: '22rem' }}>
+                    <MDBCardImage src={randomImage} position='top' alt='...' />
+                    <MDBCardBody>
+                        <MDBCardTitle>asd</MDBCardTitle>
+                        <MDBCardText>
+                        asd
+                        </MDBCardText>
+                        <MDBBtn  href='/payment'>Donate</MDBBtn>
+                    </MDBCardBody>
+                </MDBCard>
+            </MDBCol>
             </div>
 
             <div class="col-sm boxed">
