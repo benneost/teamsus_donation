@@ -87,8 +87,9 @@ function Payment() {
           onClick={togglePopup}>Pay</MDBBtn>
           {isOpen && <Popup
                         content={<>
-                            <h3>Payment Success!!</h3>
-                            <b>$0.50 have been Donated to American Beneficiary</b>
+                            <h3>You will be sending $13.40</h3>
+                            <b> Total Rounded Amount: $14.00</b><br></br>
+                            <b>$0.60 have been Donated to National Foundation for Cancer Research</b>
                         </>}
                         handleClose={togglePopup}
                         />}
