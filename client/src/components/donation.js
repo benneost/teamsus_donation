@@ -62,7 +62,7 @@ function Donation() {
 
         <div class="row">
             <div class="col-sm-12 boxed">
-                    <MDBNavbarLink href='/beneficiarieslist' style={{color:'black'}}>Beneficiaries of Ongoing Causes</MDBNavbarLink>
+                    <MDBNavbarLink href='/beneficiaries' style={{color:'black'}}>Beneficiaries of Ongoing Causes</MDBNavbarLink>
                 </div>
             </div>
         </div>
