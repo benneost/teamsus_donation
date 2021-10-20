@@ -93,7 +93,7 @@ function Payment2() {
 
                             <br></br>
                             
-                            <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}><MDBNavbarLink href='/donation' className='text-white'>Donate</MDBNavbarLink></button>
+                            <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}><MDBNavbarLink href='/beneficiaries' className='text-white'>Donate</MDBNavbarLink></button>
                         </>}
                         />}
           </div>
