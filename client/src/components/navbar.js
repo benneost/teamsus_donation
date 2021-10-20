@@ -13,9 +13,9 @@ function NavBar() {
     const [showNavSecond, setShowNavSecond] = useState(false);
 
     return (
-        <MDBNavbar expand='lg' light bgColor='light'>
+        <MDBNavbar expand='lg' style={{backgroundColor: "#104046", borderRadius:10}}>
         <MDBContainer fluid>
-            <MDBNavbarBrand href='#'>AppName</MDBNavbarBrand>
+            <MDBNavbarBrand href='#' className='text-white'>AppName</MDBNavbarBrand>
             <MDBNavbarToggler
             aria-expanded='false'
             aria-label='Toggle navigation'
@@ -25,12 +25,12 @@ function NavBar() {
             </MDBNavbarToggler>
             <MDBCollapse navbar show={showNavSecond}>
             <MDBNavbarNav>
-                <MDBNavbarLink active aria-current='page' href='/home'>
+                <MDBNavbarLink active aria-current='page' href='/home' className='text-white'>
                 Home
                 </MDBNavbarLink>
-                <MDBNavbarLink href='/profile_page'>Profile</MDBNavbarLink>
-                <MDBNavbarLink href='/donation'>Donation</MDBNavbarLink>
-                <MDBNavbarLink href='/rewards'>Rewards</MDBNavbarLink>
+                <MDBNavbarLink href='/profile_page' className='text-white'>Profile</MDBNavbarLink>
+                <MDBNavbarLink href='/donation' className='text-white'>Donation</MDBNavbarLink>
+                <MDBNavbarLink href='/rewards' className='text-white'>Rewards</MDBNavbarLink>
             </MDBNavbarNav>
             </MDBCollapse>
         </MDBContainer>

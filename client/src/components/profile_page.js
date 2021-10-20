@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBDropdown, MDBBtn, MDBContainer, MDBInput ,MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBRow, MDBCol, MDBCardSubTitle } from 'mdb-react-ui-kit';
-
+import NavBar from "./navbar";
  
 function Profile() {
   return (
     <MDBContainer fluid>
+      <NavBar></NavBar>
       <div className= 'px-4 align-items-baseline justify-content-center'>
       <div>
                 <h2 className='mb-3 py-4 text-center'>

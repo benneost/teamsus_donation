@@ -4,6 +4,7 @@ import "./styles.css";
 import axios from 'axios';
 import Popup from './popup';
 import NavBar from './navbar';
+import "./payment_page.css";
 
 function Payment() {
     const [isOpen, setIsOpen] = useState(false);
@@ -46,12 +47,13 @@ function Payment() {
         <form onSubmit={handleSubmit}>
         <div className='text-center'>
             <div>
-                <h5 className='mb-3 py-4'>
+                {/* <h5 className='mb-3 py-4'>
                 <b>Payment</b>
                 </h5>
                     <img src='https://expertphotography.b-cdn.net/wp-content/uploads/2020/05/photo-of-woman-wearing-yellow.jpg' className='img-fluid rounded-circle' sm='4' style={{maxWidth: '7rem'}} alt='...' />
-                    <h6 style={{marginTop: '10px'}}>Tanya</h6>
+                    <h6 style={{marginTop: '10px'}}>Tanya</h6> */}
         <MDBCard
+        class="pcard"
         padding={4}
         marginTop="27px"
         width="500px"
@@ -60,6 +62,11 @@ function Payment() {
         alignItems="center"
         borderWidth="2px"
         borderRadius="lg">
+        <h5 className='mb-3 py-4'>
+                <b>Payment</b>
+                </h5>
+                    <img src='https://expertphotography.b-cdn.net/wp-content/uploads/2020/05/photo-of-woman-wearing-yellow.jpg' className='img-fluid rounded-circle' sm='4' style={{maxWidth: '7rem'}} alt='...' />
+                    <h6 style={{marginTop: '10px'}}>Tanya</h6>
         <MDBCardText fontWeight="bold">Enter Amount:</MDBCardText>
         <div className="form-group" style={{marginLeft: '20px', marginRight:'20px'}}> 
         <MDBInput label="Amount" type="text" onChange={(event)=>handleChange(event)}/>
@@ -67,7 +74,7 @@ function Payment() {
         <div className="justify-content-center">
         <MDBBtn href='#'
           style={{
-            backgroundColor: "#348ceb",
+            backgroundColor: "#104046",
             color: "white",
             borderRadius: "3px",
             width: "130px",
@@ -77,11 +84,11 @@ function Payment() {
             alignItems: 'center',
             justifyContent:'center'
           }} 
-          onClick={(e) => handleSubmit(e)}>Pay</MDBBtn>
+          onClick={togglePopup}>Pay</MDBBtn>
           {isOpen && <Popup
                         content={<>
                             <h3>Payment Success!!</h3>
-                            <b>$xxx have been transferred to Tanya</b>
+                            <b>$0.50 have been Donated to American Beneficiary</b>
                         </>}
                         handleClose={togglePopup}
                         />}
