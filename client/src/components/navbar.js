@@ -32,7 +32,7 @@ function NavBar() {
                 <MDBNavbarLink active aria-current='page' href='/home' className='text-white'>
                 Home
                 </MDBNavbarLink>
-                <MDBNavbarLink href='/profile_page' className='text-white'>Profile</MDBNavbarLink>
+                <MDBNavbarLink href='/profile' className='text-white'>Profile</MDBNavbarLink>
                 <MDBNavbarLink href='/donation' className='text-white'>Donation</MDBNavbarLink>
                 <MDBNavbarLink href='/rewards' className='text-white'>Rewards</MDBNavbarLink>
                 <MDBNavbarLink href='/history' className='text-white'>History</MDBNavbarLink>
