@@ -18,6 +18,17 @@ function Rewards() {
     // Used for Modal
     const [centredModal, setCentredModal] = useState(false);
     const toggleShow = () => setCentredModal(!centredModal);
+    
+    const [redeem, setRedeem] = useState(false);
+    const toggleRedeem = () => {
+        toggleShow();
+        setRedeem(!redeem);
+    }
+
+    const toggleClose = () => {
+        setCentredModal(false);
+        setRedeem(false);
+    }
 
     return (
     
@@ -102,14 +113,36 @@ function Rewards() {
                         </MDBModalHeader>
                         <MDBModalBody>
                             <p>
-                            Redeem with 2,000 points?
+                            Redeem with 3,000 points?
                             </p>
                         </MDBModalBody>
                         <MDBModalFooter centered>
                             <MDBBtn color='white' onClick={toggleShow}>
                             Cancel
                             </MDBBtn>
-                            <MDBBtn color='success'>Redeem</MDBBtn>
+                            <MDBBtn color='success' onClick={toggleRedeem}>Redeem</MDBBtn>
+                        </MDBModalFooter>
+                        </MDBModalContent>
+                    </MDBModalDialog>
+                </MDBModal>
+
+                <MDBModal tabIndex='-1' show={redeem} getOpenState={(e: any) => setRedeem(e)} >
+                    <MDBModalDialog centered size="sm">
+                        <MDBModalContent>
+                        <MDBModalHeader>
+                            <MDBModalTitle>Redeem Successfully!</MDBModalTitle>
+                            <MDBBtn className='btn-close' color='none' onClick={toggleClose}></MDBBtn>
+                        </MDBModalHeader>
+                        <MDBModalBody>
+                            <p>
+                            You have $2 off your Koi puchase.
+                            </p>
+                        </MDBModalBody>
+                        <MDBModalFooter centered>
+                            <MDBBtn color='white' onClick={toggleClose}>
+                            Close
+                            </MDBBtn>
+                            {/* <MDBBtn color='success' >Redeem</MDBBtn> */}
                         </MDBModalFooter>
                         </MDBModalContent>
                     </MDBModalDialog>

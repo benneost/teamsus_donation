@@ -23,7 +23,7 @@ function Payment() {
     const handleSubmit = (e) => {
         e.preventDefault()
         const payload={amount:amountSend,
-                       beneficiaryid: '1',
+                       beneficiaryid: '3',
                        userid: '1'
                     }
         axios.post('payment/add', payload)
