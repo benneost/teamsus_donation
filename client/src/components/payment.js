@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBDropdown, MDBBtn, MDBContainer, MDBInput ,MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBRow, MDBCol, MDBCardSubTitle } from 'mdb-react-ui-kit';
+import { MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle, MDBDropdown, MDBBtn, MDBContainer, MDBInput ,MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBRow, MDBCol, MDBCardSubTitle, MDBNavbarLink} from 'mdb-react-ui-kit';
 import "./styles.css";
 import axios from 'axios';
 import Popup from './popup';
@@ -87,10 +87,16 @@ function Payment() {
           onClick={togglePopup}>Pay</MDBBtn>
           {isOpen && <Popup
                         content={<>
-                            <h3>You will be sending $13.40</h3>
-                            <b> Total Rounded Amount: $14.00</b><br></br>
-                            <b>$0.60 have been Donated to National Foundation for Cancer Research</b>
+                            <h5>Payment Amount: $13.70</h5><br></br>
+                            <h3>Rounded Amount: $14.00</h3><br></br>
+                            <h5>Amount Donated: $0.30</h5><br></br>
+
+                            <br></br>
+                            
+                            <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}><MDBNavbarLink href='/donation' className='text-white'>Donate</MDBNavbarLink></button>
                         </>}
+
+                        
                         handleClose={togglePopup}
                         />}
           </div>

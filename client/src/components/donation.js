@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import Popup from './popup';
-import { MDBBtn, MDBContainer, MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBRow, MDBCol, MDBCardSubTitle, MDBNavbar,
+
+import { MDBCarousel,
+    MDBCarouselInner,
+    MDBCarouselItem,
+    MDBCarouselElement,
+    MDBCarouselCaption,
+    MDBBtn, MDBContainer, MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBRow, MDBCol, MDBCardSubTitle, MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarToggler,
     MDBNavbarNav,
@@ -28,14 +34,17 @@ function Donation() {
 
     <div class="container">
     <div class="row">
-        <div id="card" class="col-sm-12" style={{width:'33%', marginTop:'10px'}}>
+        <div id="card" class="col-sm-12" style={{width:'100%', marginTop:'10px'}}>
             <h3 className='text-center'>Card Amount: $100.34</h3>
         </div>
     </div>
         Recommended
         <div class="row">
-            <div class="col-sm d-flex align-items-stretch">
-            <MDBCard id='dcard' style={{width: '33%', margin: '20px'}}>
+
+        <MDBCarousel showIndicators showControls fade>
+        <MDBCarouselInner>
+            <MDBCarouselItem className='active'>
+            <MDBCard style={{width: '100%', margin: '20px'}}>
                 <MDBCardImage src={beneficiaryimage[0]} position='top' alt='...' />
                 <MDBCardBody>
                     <MDBCardTitle>National Foundation for Cancer Research</MDBCardTitle>
@@ -45,13 +54,15 @@ function Donation() {
                     <MDBBtn style={{margin: '5px'}} href='#'>Visit</MDBBtn>
     
                     
-                    <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}>Donate</button>
-                    
+            <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}>Donate</button>
+            
 
-                </MDBCardBody>
-            </MDBCard>
+        </MDBCardBody>
+    </MDBCard>
+    </MDBCarouselItem>
 
-            <MDBCard id='dcard' style={{ width: '33%', margin: '20px' }}>
+            <MDBCarouselItem>
+            <MDBCard style={{ width: '100%', margin: '10px' }}>
                 <MDBCardImage src={beneficiaryimage[1]} position='top' alt='...' />
                 <MDBCardBody>
                     <MDBCardTitle>Planned Parenthood Great Plains</MDBCardTitle>
@@ -61,13 +72,15 @@ function Donation() {
                     <MDBBtn style={{margin: '5px'}} href='#'>Visit</MDBBtn>
     
                     
-                    <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}>Donate</button>
-                    
+                <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}>Donate</button>
+                
 
-                </MDBCardBody>
-            </MDBCard>
+        </MDBCardBody>
+    </MDBCard>
+    </MDBCarouselItem>
 
-            <MDBCard id='dcard' style={{ width: '33%', margin: '20px' }}>
+            <MDBCarouselItem>
+            <MDBCard style={{ width: '100%', margin: '10px' }}>
                 <MDBCardImage src={beneficiaryimage[2]} position='top' alt='...' />
                 <MDBCardBody>
                     <MDBCardTitle>Wayside Christian Mission</MDBCardTitle>
@@ -82,13 +95,16 @@ function Donation() {
 
                 </MDBCardBody>
             </MDBCard>
-            </div>
+            </MDBCarouselItem>
+        </MDBCarouselInner>
+        </MDBCarousel>
+        
         </div>
 
         Your Top Picks
         <div class="row">
             <div class="col-sm d-flex align-items-stretch">
-            <MDBCard id='dcard' style={{ width: '33%', margin: '20px' }}>
+            <MDBCard style={{ width: '33%', margin: '10px' }}>
                 <MDBCardImage src={beneficiaryimage[3]} position='top' alt='...' />
                 <MDBCardBody>
                     <MDBCardTitle>East End House</MDBCardTitle>
@@ -104,7 +120,7 @@ function Donation() {
                 </MDBCardBody>
             </MDBCard>
             
-            <MDBCard id='dcard' style={{ width: '33%', margin: '20px'}}>
+            <MDBCard style={{ width: '33%', margin: '10px'}}>
                 <MDBCardImage src={beneficiaryimage[4]} position='top' alt='...' />
                 <MDBCardBody>
                     <MDBCardTitle>Longyear Museum</MDBCardTitle>
@@ -120,7 +136,7 @@ function Donation() {
                 </MDBCardBody>
             </MDBCard>
             
-            <MDBCard id='dcard' style={{ width: '33%', margin: '20px' }}>
+            <MDBCard style={{ width: '33%', margin: '10px' }}>
                 <MDBCardImage src={beneficiaryimage[5]} position='top' alt='...' />
                 <MDBCardBody>
                     <MDBCardTitle>Foundation for Physical Therapy</MDBCardTitle>
