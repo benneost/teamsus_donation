@@ -44,7 +44,7 @@ const App = () => {
       <Route path='/beneficiaries' component={Beneficiary}/>
       <Route path='/contact' component={createCard}/>
       <Route path='/rewards' component={Rewards}/>
-      <Route path='/profile_page' component={Profile}/>
+      <Route path='/profile' component={Profile}/>
       <Route path='/donation' component={Donation}/>
       <Route path='/currentaffairs' component={CurrentAffairs}/>
       <Route path='/history' component={History}/>
