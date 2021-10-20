@@ -20,7 +20,7 @@ function Home() {
 
     <div class="container">
     <div class="row fancy">
-        <div id="card" class="col-sm-12" style={{width:'33%', marginTop:'10px'}}>
+        <div id="card" class="col-sm-12" style={{width:'95%', marginTop:'10px'}}>
             <h3 className='text-center'>Card Amount: $100.34</h3>
         </div>
     </div>
