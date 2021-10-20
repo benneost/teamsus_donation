@@ -10,6 +10,7 @@ import { MDBBtn, MDBContainer, MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBC
 import { useHistory } from 'react-router-dom';
 import NavBar from "./navbar";
 import "./home.css";
+import "./donation.css";
 
 import "bootstrap/dist/css/bootstrap.css";
 import beneficiaryimage from "./beneficiaryimage";
@@ -27,8 +28,8 @@ function Donation() {
 
     <div class="container">
     <div class="row">
-        <div id="card" class="col-sm-12">
-            card amount
+        <div id="card" class="col-sm-12" style={{width:'33%', marginTop:'10px'}}>
+            <h3 className='text-center'>Card Amount: $100.34</h3>
         </div>
     </div>
         Recommended

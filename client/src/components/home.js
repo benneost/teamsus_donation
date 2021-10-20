@@ -20,20 +20,20 @@ function Home() {
 
     <div class="container">
     <div class="row fancy">
-        <div id="card" class="col-sm-12">
-            $50
+        <div id="card" class="col-sm-12" style={{width:'33%', marginTop:'10px'}}>
+            <h3 className='text-center'>Card Amount: $100.34</h3>
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/payment' style={{color:'white'}}><img src ="https://www.donate.om/donationsportal/Images/DonationType/kafartyameen.png" alt="icon" width="25" height="25"></img> Payment</MDBNavbarLink>
+            <MDBNavbarLink href='/contact' style={{color:'white'}}><img src ="https://www.donate.om/donationsportal/Images/DonationType/kafartyameen.png" alt="icon" width="25" height="25"></img> Payment</MDBNavbarLink>
         </div>
         </div>
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/profile' style={{color:'white'}}><img src ="https://icon-library.com/images/profile-icon-white/profile-icon-white-22.jpg" alt="icon" width="25" height="25"></img> Profile</MDBNavbarLink>
+            <MDBNavbarLink href='/profile_page' style={{color:'white'}}><img src ="https://icon-library.com/images/profile-icon-white/profile-icon-white-22.jpg" alt="icon" width="25" height="25"></img> Profile</MDBNavbarLink>
         </div>
         </div>
         <div class="col-sm-6">
