@@ -26,49 +26,121 @@ function Donation() {
     </div>
         Recommended
         <div class="row">
-            <div class="col-sm boxed">
-            Insert Event
-            </div>
+            <div class="col-sm d-flex align-items-stretch">
+            <MDBCard style={{width: '33%', margin: '20px'}}>
+                <MDBCardImage src='beneficiaryimages/health1.jpeg' position='top' alt='...' />
+                <MDBCardBody>
+                    <MDBCardTitle>National Foundation for Cancer Research</MDBCardTitle>
+                    <MDBCardText>
+                    Health: Diseases, Disorders and Disciplines
+                    </MDBCardText>
+                    <MDBBtn style={{margin: '5px'}} href='#'>Visit</MDBBtn>
+    
+                    
+                    <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}>Donate</button>
+                    
 
-            <div class="col-sm boxed">
-            Insert Event
-            </div>
+                </MDBCardBody>
+            </MDBCard>
 
-            <div class="col-sm boxed">
-            Insert Event
+            <MDBCard style={{ width: '33%', margin: '20px' }}>
+                <MDBCardImage src='beneficiaryimages/health1.jpeg' position='top' alt='...' />
+                <MDBCardBody>
+                    <MDBCardTitle>Planned Parenthood Great Plains</MDBCardTitle>
+                    <MDBCardText>
+                    Health: Treatment and Prevention Services
+                    </MDBCardText>
+                    <MDBBtn style={{margin: '5px'}} href='#'>Visit</MDBBtn>
+    
+                    
+                    <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}>Donate</button>
+                    
+
+                </MDBCardBody>
+            </MDBCard>
+
+            <MDBCard style={{ width: '33%', margin: '20px' }}>
+                <MDBCardImage src='beneficiaryimages/health1.jpeg' position='top' alt='...' />
+                <MDBCardBody>
+                    <MDBCardTitle>Wayside Christian Mission</MDBCardTitle>
+                    <MDBCardText>
+                    Human Services: Homeless Services
+                    </MDBCardText>
+                    <MDBBtn style={{margin: '5px'}} href='#'>Visit</MDBBtn>
+    
+                    
+                    <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}>Donate</button>
+                    
+
+                </MDBCardBody>
+            </MDBCard>
             </div>
         </div>
 
         Your Top Picks
         <div class="row">
-            <div class="col-sm boxed">
-            Insert Event
-            </div>
+            <div class="col-sm d-flex align-items-stretch">
+            <MDBCard style={{ width: '33%', margin: '20px' }}>
+                <MDBCardImage src='beneficiaryimages/health1.jpeg' position='top' alt='...' />
+                <MDBCardBody>
+                    <MDBCardTitle>East End House</MDBCardTitle>
+                    <MDBCardText>
+                    Human Services: Social Services
+                    </MDBCardText>
+                    <MDBBtn style={{margin: '5px'}} href='#'>Visit</MDBBtn>
+    
+                    
+                    <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}>Donate</button>
+                    
 
-            <div class="col-sm boxed">
-            Insert Event
-            </div>
+                </MDBCardBody>
+            </MDBCard>
+            
+            <MDBCard style={{ width: '33%', margin: '20px'}}>
+                <MDBCardImage src='beneficiaryimages/health1.jpeg' position='top' alt='...' />
+                <MDBCardBody>
+                    <MDBCardTitle>Longyear Museum</MDBCardTitle>
+                    <MDBCardText>
+                    Arts, Culture, Humanities: Museums
+                    </MDBCardText>
+                    <MDBBtn style={{margin: '5px'}} href='#'>Visit</MDBBtn>
+    
+                    
+                    <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}>Donate</button>
+                    
 
-            <div class="col-sm boxed">
-            Insert Event
+                </MDBCardBody>
+            </MDBCard>
+            
+            <MDBCard style={{ width: '33%', margin: '20px' }}>
+                <MDBCardImage src='beneficiaryimages/health1.jpeg' position='top' alt='...' />
+                <MDBCardBody>
+                    <MDBCardTitle>Foundation for Physical Therapy</MDBCardTitle>
+                    <MDBCardText>
+                    Health: Medical Research
+                    </MDBCardText>
+                    <MDBBtn style={{margin: '5px'}} href='#'>Visit</MDBBtn>
+    
+                    
+                    <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}>Donate</button>
+                    
+
+                </MDBCardBody>
+            </MDBCard>
             </div>
         </div>
         
 
         <div class="row">
-            <div class="col-sm-12 boxed">
+            <div class="col-sm-12 boxed" style={{width: '96%'}}>
             <MDBNavbarLink href='/currentaffairs' style={{color:'black'}}>Current Affairs</MDBNavbarLink>
             </div>
-
-        <div class="row">
-            <div class="col-sm-12 boxed">
+            
+            <div class="col-sm-12 boxed" style={{width: '96%'}}>
                     <MDBNavbarLink href='/beneficiaries' style={{color:'black'}}>Beneficiaries of Ongoing Causes</MDBNavbarLink>
-                </div>
+            </div>
             </div>
         </div>
-
-        </div>
-
     </MDBContainer>
     );
 }
