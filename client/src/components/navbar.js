@@ -8,6 +8,7 @@ import { MDBBtn, MDBContainer, MDBNavbar,
     MDBNavbarLink,
     MDBCollapse } from 'mdb-react-ui-kit';
 
+import image from '../images/UP (1).png';
 
 function NavBar() {
     const [showNavSecond, setShowNavSecond] = useState(false);
@@ -15,7 +16,10 @@ function NavBar() {
     return (
         <MDBNavbar expand='lg' style={{backgroundColor: "#104046", borderRadius:10}}>
         <MDBContainer fluid>
-            <MDBNavbarBrand href='#' className='text-white'>AppName</MDBNavbarBrand>
+            {/* <MDBNavbarBrand href='#' className='text-white'>AppName</MDBNavbarBrand>  */}
+            <div>
+            <img src='https://i.ibb.co/Wy93mHK/UP-2.png' width = '150px' alt='...'/>
+            </div>
             <MDBNavbarToggler
             aria-expanded='false'
             aria-label='Toggle navigation'
@@ -30,9 +34,6 @@ function NavBar() {
                 </MDBNavbarLink>
                 <MDBNavbarLink href='/profile_page' className='text-white'>Profile</MDBNavbarLink>
                 <MDBNavbarLink href='/donation' className='text-white'>Donation</MDBNavbarLink>
-                <MDBNavbarLink href='/rewards' className='text-white'>Rewards</MDBNavbarLink>
-                <MDBNavbarLink href='/profile_page' className='text-white'>Profile</MDBNavbarLink>
-                <MDBNavbarLink href='/donation' className='text-white' >Donation</MDBNavbarLink>
                 <MDBNavbarLink href='/rewards' className='text-white'>Rewards</MDBNavbarLink>
                 <MDBNavbarLink href='/history' className='text-white'>History</MDBNavbarLink>
             </MDBNavbarNav>

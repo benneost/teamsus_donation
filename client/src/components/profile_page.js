@@ -26,7 +26,7 @@ function Profile() {
               </a>
             </MDBCardTitle>
             <p className="card-meta">Joined in 2013</p>
-            <MDBBtn flat>Credit card</MDBBtn>
+            <h5>1009 Points</h5>
             {/* <MDBCardText></MDBCardText> */}
             <hr />
             <a href="#!" className="card-meta">
