@@ -21,7 +21,7 @@ function Home() {
     <div class="container">
     <div class="row fancy">
         <div id="card" class="col-sm-12">
-            card amount
+            $50
         </div>
     </div>
 

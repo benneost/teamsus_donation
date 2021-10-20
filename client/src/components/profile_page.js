@@ -7,7 +7,6 @@ function Profile() {
     <MDBContainer fluid>
       <NavBar></NavBar>
       <div className= 'px-4 align-items-baseline justify-content-center'>
-      <div>
                 <h2 className='mb-3 py-4 text-center'>
                 <b>User Profile</b>
                 </h2>
@@ -41,7 +40,7 @@ function Profile() {
         </MDBCard>
       </MDBCol>
     </MDBRow>
-    </div>
+    
     </div>
     </MDBContainer>
   );
