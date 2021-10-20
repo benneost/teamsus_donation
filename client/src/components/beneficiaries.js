@@ -48,7 +48,7 @@ function Beneficiary(){
         // })
     }, []);
     
-    const randomImage = beneficiaryimage[Math.floor(Math.random() * beneficiaryimage.length)];
+    const randomImage = Math.floor(Math.random() * beneficiaryimage.length);
 
     return ( 
 
@@ -78,322 +78,21 @@ function Beneficiary(){
                 {data.map( (beneficiary) => (
                     <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
                         <MDBCard style={{ maxWidth: '22rem' }}>
-                            <MDBCardImage src={randomImage} position='top' alt='...' />
+                            <MDBCardImage src={beneficiaryimage[Math.floor(Math.random() * beneficiaryimage.length)]} position='top' alt='...' />
                             <MDBCardBody>
                                 <MDBCardTitle>{beneficiary.bname}</MDBCardTitle>
                                 <MDBCardText>
                                 {beneficiary.description}
                                 </MDBCardText>
-                                <MDBBtn href='#' onClick={togglePopup}>Visit</MDBBtn>
+                                <MDBBtn  href='/payment'>Donate</MDBBtn>
                 
-                                {isOpen && <Popup
-                                content={<>
-                                    <b>{beneficiary.bname}</b>
-                                    <ul>
-                                        <li>{beneficiary.cause}</li>
-                                        <li>{beneficiary.amtdonated}</li>
-                                        <li>{beneficiary.url}</li>
-                                    </ul>
-                                    <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                                </>}
-                                handleClose={togglePopup}
-                                />}
+                                
 
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
                 ))}
                 
-            
-
-            {/* <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-            </MDBCol>
-
-            <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
-                <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src='https://mdbcdn.b-cdn.net/img/new/standard/nature/184.jpg' position='top' alt='...' />
-                    <MDBCardBody>
-                        <MDBCardTitle>Beneficiary Name</MDBCardTitle>
-                        <MDBCardText>
-                        Insert text on beneficiary information, cause, impact, amount of donations made etc.
-                        </MDBCardText>
-                        <MDBBtn href='#' onClick={togglePopup}>Find Out More</MDBBtn>
-        
-                        {isOpen && <Popup
-                        content={<>
-                            <b>Beneficiary Name</b>
-                            <ul>
-                                <li>Cause</li>
-                                <li>Actions Taken (eg. with donation etc.)</li>
-                                <li>Amount Received</li>
-                            </ul>
-                            <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
-                        </>}
-                        handleClose={togglePopup}
-                        />}
-                    </MDBCardBody>
-                </MDBCard>
-
-
-            </MDBCol> */}
-
         </MDBRow>
 
         </MDBContainer>
@@ -402,3 +101,17 @@ function Beneficiary(){
 }
 
 export default Beneficiary;
+
+
+// {isOpen && <Popup
+//     content={<>
+//         <b>{beneficiary.bname}</b>
+//         <ul>
+//             <li>{beneficiary.cause}</li>
+//             <li>{beneficiary.amtdonated}</li>
+//             <li>{beneficiary.url}</li>
+//         </ul>
+//         <button type="button" class="btn btn-success btn-rounded px-4">Donate</button>
+//     </>}
+//     handleClose={togglePopup}
+//     />}

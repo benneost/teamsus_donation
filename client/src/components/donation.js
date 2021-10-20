@@ -12,8 +12,15 @@ import NavBar from "./navbar";
 import "./home.css";
 
 import "bootstrap/dist/css/bootstrap.css";
+import beneficiaryimage from "./beneficiaryimage";
 
 function Donation() {
+
+    const randomImage = beneficiaryimage[Math.floor(Math.random() * beneficiaryimage.length)];
+
+    const i = 0;
+
+
     return (
     <MDBContainer fluid>
     <NavBar></NavBar>
@@ -133,11 +140,11 @@ function Donation() {
 
         <div class="row">
             <div class="col-sm-12 boxed" style={{width: '96%'}}>
-            <MDBNavbarLink href='/currentaffairs' style={{color:'black'}}>Current Affairs</MDBNavbarLink>
+            <MDBNavbarLink href='/currentaffairs' style={{color:'white'}}>Current Affairs</MDBNavbarLink>
             </div>
             
             <div class="col-sm-12 boxed" style={{width: '96%'}}>
-                    <MDBNavbarLink href='/beneficiaries' style={{color:'black'}}>Beneficiaries of Ongoing Causes</MDBNavbarLink>
+                    <MDBNavbarLink href='/beneficiaries' style={{color:'white'}}>Beneficiaries of Ongoing Causes</MDBNavbarLink>
             </div>
             </div>
         </div>

@@ -28,22 +28,22 @@ function Home() {
     <div class="row">
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/payment' style={{color:'black'}}>Payment</MDBNavbarLink>
+            <MDBNavbarLink href='/payment' style={{color:'white'}}><img src ="https://www.donate.om/donationsportal/Images/DonationType/kafartyameen.png" alt="icon" width="25" height="25"></img> Payment</MDBNavbarLink>
         </div>
         </div>
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/profile' style={{color:'black'}}>Profile</MDBNavbarLink>
+            <MDBNavbarLink href='/profile' style={{color:'white'}}><img src ="https://icon-library.com/images/profile-icon-white/profile-icon-white-22.jpg" alt="icon" width="25" height="25"></img> Profile</MDBNavbarLink>
         </div>
         </div>
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/donation' style={{color:'black'}}>Donation</MDBNavbarLink>
+            <MDBNavbarLink href='/donation' style={{color:'white'}}><img src ="https://www.seekpng.com/png/full/117-1179108_donate-donate-icon-white-png.png" alt="icon" width="25" height="25"></img> Donation</MDBNavbarLink>
         </div>
         </div>
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/rewards' style={{color:'black'}}>Rewards</MDBNavbarLink>
+            <MDBNavbarLink href='/rewards' style={{color:'white'}}><img src ="https://flaticons.net/icon.php?slug_category=miscellaneous&slug_icon=gift" alt="icon" width="25" height="25"></img> Rewards</MDBNavbarLink>
         </div>
         </div>
     </div>
