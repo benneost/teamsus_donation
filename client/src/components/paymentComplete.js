@@ -28,11 +28,11 @@ function PaymentComplete() {
         <MDBCard>
             
             <MDBCardBody>
-                <MDBCardTitle>asd</MDBCardTitle>
+                <MDBCardTitle>Payment Success!</MDBCardTitle>
                 <MDBCardText>
-                asd
+                Thank you for donating! You are helping to make the world a better place
                 </MDBCardText>
-                <MDBBtn  href='/payment'>Donate</MDBBtn>
+                <MDBBtn  href='/home'>Back Home</MDBBtn>
             </MDBCardBody>
       </MDBCard>
     </div>
