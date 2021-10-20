@@ -31,6 +31,7 @@ function NavBar() {
                 <MDBNavbarLink href='/profile_page'>Profile</MDBNavbarLink>
                 <MDBNavbarLink href='/donation'>Donation</MDBNavbarLink>
                 <MDBNavbarLink href='/rewards'>Rewards</MDBNavbarLink>
+                <MDBNavbarLink href='/history'>History</MDBNavbarLink>
             </MDBNavbarNav>
             </MDBCollapse>
         </MDBContainer>
