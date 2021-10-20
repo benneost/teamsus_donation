@@ -1,0 +1,7 @@
+#dcard{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
+}
+
+#card{
+  background-image: linear-gradient(lightskyblue,lightgreen);
+}
