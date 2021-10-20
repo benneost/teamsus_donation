@@ -20,15 +20,15 @@ function Home() {
 
     <div class="container">
     <div class="row fancy">
-        <div id="card" class="col-sm-12">
-            card amount
+        <div id="card" class="col-sm-12" style={{width:'33%', marginTop:'10px'}}>
+            <h3 className='text-center'>Card Amount: $100.34</h3>
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/payment' style={{color:'white'}}><img src ="https://www.donate.om/donationsportal/Images/DonationType/kafartyameen.png" alt="icon" width="25" height="25"></img> Payment</MDBNavbarLink>
+            <MDBNavbarLink href='/contact' style={{color:'white'}}><img src ="https://www.donate.om/donationsportal/Images/DonationType/kafartyameen.png" alt="icon" width="25" height="25"></img> Payment</MDBNavbarLink>
         </div>
         </div>
         <div class="col-sm-6">
