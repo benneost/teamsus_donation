@@ -16,6 +16,7 @@ import Profile from "./components/profile_page";
 import Donation from "./components/donation";
 import CurrentAffairs from "./components/currentaffairs";
 import History from "./components/history";
+import PaymentComplete from "./components/paymentComplete";
 
 // To connect to our db
 // require('dotenv').config()
@@ -48,6 +49,7 @@ const App = () => {
       <Route path='/donation' component={Donation}/>
       <Route path='/currentaffairs' component={CurrentAffairs}/>
       <Route path='/history' component={History}/>
+      <Route path='/paymentComplete' component={PaymentComplete}/>
       {/* <Route path='/credit_card' component={CardContainer}/> */}
 
       <Route path='/NavBar' component={NavBar}/>

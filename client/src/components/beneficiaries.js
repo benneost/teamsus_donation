@@ -84,7 +84,7 @@ function Beneficiary(){
                                 <MDBCardText>
                                 {beneficiary.description}
                                 </MDBCardText>
-                                <MDBBtn  href='/payment'>Donate</MDBBtn>
+                                <MDBBtn  href='/paymentcomplete'>Donate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
