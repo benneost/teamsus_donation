@@ -8,6 +8,8 @@ import Rewards from "./components/rewards";
 import Home from "./components/home";
 import Redemption from "./components/redemption";
 import Payment from "./components/payment";
+import Payment2 from "./components/payment2";
+import Payment3 from "./components/payment3";
 import Payment_outcome from "./components/payment_outcome";
 import Beneficiary from "./components/beneficiaries";
 import NavBar from "./components/navbar";
@@ -40,6 +42,8 @@ const App = () => {
       {/* <Route path='/redemption' component={Redemption}/> */}
       <Route path='/home' component={Home}/>
       <Route path='/payment' component={Payment}/>
+      <Route path='/payment2' component={Payment2}/>
+      <Route path='/payment3' component={Payment3}/>
       <Route path='/payment_outcome' component={Payment_outcome}/>
       <Route path='/beneficiaries' component={Beneficiary}/>
       <Route path='/contact' component={createCard}/>
