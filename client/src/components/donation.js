@@ -34,7 +34,7 @@ function Donation() {
             <div class="col-sm boxed">
             <MDBCol size='md' className='col-lg-3 col-md-4 col-sm-6 py-3'>
                 <MDBCard style={{ maxWidth: '22rem' }}>
-                    <MDBCardImage src={randomImage} position='top' alt='...' />
+                    <MDBCardImage src={beneficiaryimage[Math.floor(Math.random() * beneficiaryimage.length)]} position='top' alt='...' />
                     <MDBCardBody>
                         <MDBCardTitle>asd</MDBCardTitle>
                         <MDBCardText>
