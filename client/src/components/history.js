@@ -47,7 +47,7 @@ function History() {
         {data.map( (payment) => (
             <tr>
             <th scope='row'>{payment.paymentid}</th>
-            <td>Amref Health Africa</td>
+            <td>Planned Parenthood Great Plains</td>
             <td>$ {payment.amount}</td>
             <td>{payment.status}</td>
             </tr>

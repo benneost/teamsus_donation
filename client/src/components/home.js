@@ -33,7 +33,7 @@ function Home() {
         </div>
         <div class="col-sm-6">
         <div class="boxed">
-            <MDBNavbarLink href='/profile_page' style={{color:'white'}}><img src ="https://icon-library.com/images/profile-icon-white/profile-icon-white-22.jpg" alt="icon" width="25" height="25"></img> Profile</MDBNavbarLink>
+            <MDBNavbarLink href='/profile' style={{color:'white'}}><img src ="https://icon-library.com/images/profile-icon-white/profile-icon-white-22.jpg" alt="icon" width="25" height="25"></img> Profile</MDBNavbarLink>
         </div>
         </div>
         <div class="col-sm-6">

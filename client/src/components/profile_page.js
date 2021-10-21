@@ -7,9 +7,7 @@ function Profile() {
     <MDBContainer fluid>
       <NavBar></NavBar>
       <div className= 'px-4 align-items-baseline justify-content-center'>
-                <h2 className='mb-3 py-4 text-center'>
-                <b>User Profile</b>
-                </h2>
+  
     <MDBRow>
       <MDBCol md="6" lg="4">
         <MDBCard personal className="my-5">
@@ -24,16 +22,16 @@ function Profile() {
                 Clara
               </a>
             </MDBCardTitle>
-            <p className="card-meta">Joined in 2013</p>
+            <p className="card-meta">Joined in 2021</p>
             <h5>1009 Points</h5>
             {/* <MDBCardText></MDBCardText> */}
             <hr />
             <a href="#!" className="card-meta">
             <a>Gender</a>
             <MDBInput label="Female" hint="Disabled input" disabled type="name" />
-            <a style={{MarginTop: '10px'}} >Age</a>
+            <a style={{Margin: '10px'}} >Age</a>
             <MDBInput label="23" hint="Disabled input" disabled type="name" />
-            <a style={{MarginTop: '10px'}} >Address</a>
+            <a style={{Margin: '10px'}} >Address</a>
             <MDBInput label="10 Kan Cheong Rd" hint="Disabled input" disabled type="name" />
             </a>
           </MDBCardBody>

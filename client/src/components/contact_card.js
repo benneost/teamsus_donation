@@ -9,9 +9,10 @@ function Card(props) {
     <MDBContainer fluid>
     <NavBar></NavBar>
     <div class="col-sm-6">
-    <h1 className="text-center" style={{marginTop:'10px'}}>My Contacts</h1>
-        <MDBCard style={{margin: '30px'}}>
-                    <MDBNavbarLink href='/payment'><img src='https://expertphotography.b-cdn.net/wp-content/uploads/2020/05/photo-of-woman-wearing-yellow.jpg' width = '300px' position='top' alt='...' /></MDBNavbarLink>
+    
+        <MDBCard style={{margin:'30px'}}>
+                    <MDBNavbarLink href='/payment'>
+                        <img src='https://expertphotography.b-cdn.net/wp-content/uploads/2020/05/photo-of-woman-wearing-yellow.jpg' width = '300px' position='top' alt='...' /></MDBNavbarLink>
                     <MDBCardBody className='text-center'>
                         <MDBCardTitle style={{ paddingTop: '5px'}}>Tanya</MDBCardTitle>
                         <MDBCardSubTitle style={{ paddingTop: '5px', paddingBottom: '5px'}}>+65 9876 5432</MDBCardSubTitle>
@@ -22,7 +23,7 @@ function Card(props) {
         
         <div class="col-sm-6">
         
-            <MDBCard style={{margin: '30px'}}>
+            <MDBCard style={{margin:'30px'}}>
             <MDBNavbarLink href='/payment2'><img src="https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg" width = '300px' position='top' alt='...' /></MDBNavbarLink>
                     <MDBCardBody className='text-center'>
                         <MDBCardTitle style={{ paddingTop: '5px'}}>Benjamin</MDBCardTitle>
@@ -34,7 +35,7 @@ function Card(props) {
 
         <div class="col-sm-6">
         
-        <MDBCard style={{margin: '30px'}}>
+        <MDBCard style={{margin:'30px'}}>
         <MDBNavbarLink href='/payment3'><img src="https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png" width = '300px' position='top' alt='...' /></MDBNavbarLink>
                     <MDBCardBody className='text-center'>
                         <MDBCardTitle style={{ paddingTop: '5px'}}>Eric</MDBCardTitle>
