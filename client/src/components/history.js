@@ -43,15 +43,121 @@ function History() {
           <th scope='col'>Status</th>
         </tr>
       </MDBTableHead>
+
       <MDBTableBody>
-        {data.map( (payment) => (
+          <tr>
+            <th scope='row'>1</th>
+            <td>Planned Parenthood Great Plains</td>
+            <td>$0.30</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>2</th>
+            <td>Hindu American Foundation</td>
+            <td>$ 0.30</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>3</th>
+            <td>Longyear Museum</td>
+            <td>$ 0.20</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>4</th>
+            <td>Longyear Museum</td>
+            <td>$ 0.50</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>5</th>
+            <td>Hindu American Foundation</td>
+            <td>$ 0.10</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>6</th>
+            <td>Mentis</td>
+            <td>$ 0.35</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>7</th>
+            <td>Nine Network of Public Media</td>
+            <td>$ 0.20</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>8</th>
+            <td>Mentis</td>
+            <td>$ 0.55</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>9</th>
+            <td>Summit Academy OIC</td>
+            <td>$ 0.25</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>10</th>
+            <td>Summit Academy OIC</td>
+            <td>$ 0.50</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>11</th>
+            <td>Hindu American Foundation</td>
+            <td>$ 0.15</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>12</th>
+            <td>Mentis</td>
+            <td>$ 0.80</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>13</th>
+            <td>Mentis</td>
+            <td>$ 0.65</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>14</th>
+            <td>Project Extreme</td>
+            <td>$ 0.45</td>
+            <td>Successful</td>
+          </tr>
+
+          <tr>
+            <th scope='row'>15</th>
+            <td>Mentis</td>
+            <td>$ 0.30</td>
+            <td>Successful</td>
+          </tr>
+
+        {/* {data.map( (payment) => (
             <tr>
             <th scope='row'>{payment.paymentid}</th>
             <td>Planned Parenthood Great Plains</td>
             <td>$ {payment.amount}</td>
             <td>{payment.status}</td>
             </tr>
-        ))}
+        ))} */}
       </MDBTableBody>
     </MDBTable>
 

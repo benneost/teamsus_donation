@@ -38,7 +38,7 @@ function Payment3() {
         }
 
     return (
-    <MDBContainer fluid>
+    <MDBContainer fluid class="bg">
     <NavBar></NavBar>
     <title>Payment</title>
     <div
@@ -65,8 +65,8 @@ function Payment3() {
         <h5 className='mb-3 py-4'>
                 <b>Payment</b>
                 </h5>
-                    <img src="https://i.pinimg.com/originals/e3/94/47/e39447de921955826b1e498ccf9a39af.png" className='img-fluid rounded-circle' sm='4' style={{maxWidth: '7rem'}} alt='...' />
-                    <h6 style={{marginTop: '10px'}}>Eric</h6>
+                    <img src="https://images.unsplash.com/photo-1528341866330-07e6d1752ec2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YXNpYW4lMjB3b21hbnxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" className='img-fluid rounded-circle' sm='4' style={{maxWidth: '10rem'}} alt='...' />
+                    <h6 style={{marginTop: '20px'}}>Si Min</h6>
         <MDBCardText fontWeight="bold">Enter Amount:</MDBCardText>
         <div className="form-group" style={{marginLeft: '20px', marginRight:'20px'}}> 
         <MDBInput label="Amount" type="text" onChange={(event)=>handleChange(event)}/>
@@ -77,7 +77,9 @@ function Payment3() {
             backgroundColor: "#104046",
             color: "white",
             borderRadius: "3px",
-            width: "130px",
+            width: "50%",
+            padding: 'auto',
+            paddingTop: '8px',
             height: "31px",
             marginTop: '10px',
             marginBottom: '10px',
@@ -93,7 +95,7 @@ function Payment3() {
 
                             <br></br>
                             
-                            <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}><MDBNavbarLink href='/beneficiaries' className='text-white'>Donate</MDBNavbarLink></button>
+                            <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}><MDBNavbarLink href='/donation' className='text-white'>Donate</MDBNavbarLink></button>
                         </>}
                         handleClose={togglePopup}
                         />}

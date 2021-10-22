@@ -38,7 +38,7 @@ function Payment() {
         }
 
     return (
-    <MDBContainer fluid>
+    <MDBContainer fluid class="bg">
     <NavBar></NavBar>
     <title>Payment</title>
     <div
@@ -62,11 +62,8 @@ function Payment() {
         alignItems="center"
         borderWidth="2px"
         borderRadius="lg">
-        <h5 className='mb-3 py-4'>
-                <b>Payment</b>
-                </h5>
-                    <img src='https://expertphotography.b-cdn.net/wp-content/uploads/2020/05/photo-of-woman-wearing-yellow.jpg' className='img-fluid rounded-circle' sm='4' style={{maxWidth: '7rem'}} alt='...' />
-                    <h6 style={{marginTop: '10px'}}>Tanya</h6>
+                    <img src='https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29tZW58ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' className='img-fluid rounded-circle' sm='4' style={{maxWidth: '10rem'}} alt='...' />
+                    <h4 style={{marginTop: '20px'}}>Tanya</h4>
         <MDBCardText fontWeight="bold">Enter Amount:</MDBCardText>
         <div className="form-group" style={{marginLeft: '20px', marginRight:'20px'}}> 
         <MDBInput label="Amount" type="text" onChange={(event)=>handleChange(event)}/>
@@ -77,7 +74,9 @@ function Payment() {
             backgroundColor: "#104046",
             color: "white",
             borderRadius: "3px",
-            width: "130px",
+            width: "50%",
+            padding: 'auto',
+            paddingTop: '8px',
             height: "31px",
             marginTop: '10px',
             marginBottom: '10px',
@@ -87,13 +86,13 @@ function Payment() {
           onClick={togglePopup}>Pay</MDBBtn>
           {isOpen && <Popup
                         content={<>
-                            <h5>Payment Amount: $13.70</h5><br></br>
-                            <h3>Rounded Amount: $14.00</h3><br></br>
-                            <h5>Amount Donated: $0.30</h5><br></br>
+                            <h6>Payment Amount: $13.70</h6>
+                            <h5>Rounded Amount: $14.00</h5>
+                            <h6>Amount Donated: $0.30</h6>
 
                             <br></br>
                             
-                            <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}><MDBNavbarLink href='/beneficiaries' className='text-white'>Donate</MDBNavbarLink></button>
+                            <button type="button" class="btn btn-success btn-rounded px-4" style={{margin: '5px'}}><MDBNavbarLink href='/donation' className='text-white'>Donate</MDBNavbarLink></button>
                         </>}
 
                         

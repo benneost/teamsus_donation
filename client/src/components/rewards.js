@@ -32,7 +32,7 @@ function Rewards() {
 
     return (
     
-    <MDBContainer fluid>
+    <MDBContainer fluid class="bg">
     <NavBar></NavBar>
     <title>Rewards</title>
     {/* this is the navbar thats imported from the respective navbar js*/}

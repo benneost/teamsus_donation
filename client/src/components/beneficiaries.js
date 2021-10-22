@@ -54,7 +54,7 @@ function Beneficiary(){
 
         
         
-        <MDBContainer fluid>
+        <MDBContainer fluid class="bg">
         <NavBar></NavBar>
         <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -84,7 +84,7 @@ function Beneficiary(){
                                 <MDBCardText>
                                 {beneficiary.description}
                                 </MDBCardText>
-                                <MDBBtn  href='/paymentcomplete'>Donate</MDBBtn>
+                                <MDBBtn  color='success' href='/paymentcomplete'>Donate</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>

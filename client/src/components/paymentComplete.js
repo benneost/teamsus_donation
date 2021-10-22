@@ -18,7 +18,7 @@ function PaymentComplete() {
 
 
     return (
-    <MDBContainer fluid>
+    <MDBContainer fluid class="bg">
     <NavBar></NavBar>
     <title>Payment</title>
     <div

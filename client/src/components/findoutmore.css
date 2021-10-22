@@ -6,7 +6,8 @@
     top: 0;
     left: 0;
     z-index: 1;
-    background-color:rgb(255, 255, 255, 0.1)
+    background-color:rgb(255, 255, 255, 0.1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   }
    
   .box {
@@ -17,10 +18,11 @@
     max-height: 70vh;
     margin-top: calc(100vh - 85vh - 20px);
     background: white;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     padding: 20px;
-    border: 2px solid #999;
+    /* border: 2px solid #999; */
     overflow: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   }
    
   .close-icon {
@@ -35,7 +37,7 @@
     border-radius: 50%;
     line-height: 20px;
     text-align: center;
-    border: 1px solid #999;
+    /* border: 1px solid #999; */
     font-size: 20px;
     color: white;
   }

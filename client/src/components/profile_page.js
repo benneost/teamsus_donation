@@ -4,7 +4,7 @@ import NavBar from "./navbar";
  
 function Profile() {
   return (
-    <MDBContainer fluid>
+    <MDBContainer fluid class="bg">
       <NavBar></NavBar>
       <div className= 'px-4 align-items-baseline justify-content-center'>
   
@@ -23,15 +23,15 @@ function Profile() {
               </a>
             </MDBCardTitle>
             <p className="card-meta">Joined in 2021</p>
-            <h5>1009 Points</h5>
+            <h5>5329 Points</h5>
             {/* <MDBCardText></MDBCardText> */}
             <hr />
             <a href="#!" className="card-meta">
             <a>Gender</a>
-            <MDBInput label="Female" hint="Disabled input" disabled type="name" />
-            <a style={{Margin: '10px'}} >Age</a>
-            <MDBInput label="23" hint="Disabled input" disabled type="name" />
-            <a style={{Margin: '10px'}} >Address</a>
+            <MDBInput label="Female" hint="Disabled input" disabled type="name"/>
+            <a>Age</a>
+            <MDBInput label="23" hint="Disabled input" disabled type="name"/>
+            <a>Address</a>
             <MDBInput label="10 Kan Cheong Rd" hint="Disabled input" disabled type="name" />
             </a>
           </MDBCardBody>

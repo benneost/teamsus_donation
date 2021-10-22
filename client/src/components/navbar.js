@@ -18,7 +18,7 @@ function NavBar() {
         <MDBContainer fluid>
             {/* <MDBNavbarBrand href='#' className='text-white'>AppName</MDBNavbarBrand>  */}
             <div>
-            <img src='https://i.ibb.co/Wy93mHK/UP-2.png' width = '150px' alt='...'/>
+            <img style={{border:'none'}} src='https://i.ibb.co/Wy93mHK/UP-2.png' width = '150px' alt='...'/>
             </div>
             <MDBNavbarToggler
             aria-expanded='false'

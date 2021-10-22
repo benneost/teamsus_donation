@@ -3,7 +3,7 @@ import { MDBBtn, MDBContainer, MDBIcon, MDBCard, MDBCardBody, MDBCardTitle, MDBC
 
 
 function Avatar(props) {
-  return <MDBCardImage className='text-center' src={props.imgURL} alt="avatar_img" />;
+  return <MDBCardImage className='text-center' src={props.imgURL} alt="avatar_img"/>;
 }
 
 export default Avatar;
